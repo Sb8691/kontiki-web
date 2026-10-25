@@ -1,0 +1,203 @@
+<!doctype html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V. dejstvo · Kon-Tiki</title><style>
+:root{--sea:#1F4E5F;--sealt:#2E6E84;--gray:#5A5A5A;--note:#F3EFE7;--brass:#B08D57;--tit:#EAEFF1;--paper:#fbfaf7;--side:#f3f0e9;--ink:#1d1d1b;--line:#e2ddd2;--hdr:48px;--ui:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(var(--hdr) + 14px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 Georgia,"Times New Roman",serif}
+a{color:var(--sealt)}
+code{font:.85em ui-monospace,Menlo,monospace;background:#efece4;padding:0 .25em;border-radius:3px}
+header.top{position:sticky;top:0;z-index:40;height:var(--hdr);display:flex;align-items:center;gap:20px;padding:0 18px;background:var(--sea);color:#fff;font:14px/1 var(--ui)}
+header.top a{color:#cfe0e6;text-decoration:none}
+header.top a:hover,header.top a.on{color:#fff}
+header.top .brand{font-weight:700;letter-spacing:.16em;color:#fff}
+header.top .sp{flex:1}
+header.top input{width:9.5em;padding:6px 9px;border-radius:5px;border:0;background:#2b6276;color:#fff;font:13px var(--ui)}
+header.top input::placeholder{color:#a9c4cd}
+header.top .ver{font-size:12px;color:#a9c4cd}
+.keys{font:12px var(--ui);color:#8a857a}
+.keys kbd{font:11px var(--ui);border:1px solid #cfc9bc;border-bottom-width:2px;border-radius:3px;padding:0 4px;background:#fff;color:#444}
+/* dejstvo */
+.act{display:grid;grid-template-columns:210px minmax(0,1fr) 470px}
+.act>nav,.act>aside{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));overflow:auto}
+.act>nav{border-right:1px solid var(--line);padding:16px 12px 40px;font:13px/1.35 var(--ui)}
+.act>main{padding:30px 52px 140px;max-width:840px;width:100%;justify-self:center}
+.act>aside{border-left:1px solid var(--line);background:var(--side);padding:16px 18px 60px;font:14px/1.45 var(--ui)}
+.act.bez{grid-template-columns:210px minmax(0,1fr)}.act.bez>nav{display:block}
+@media (max-width:900px){.act.bez{grid-template-columns:1fr}.act.bez>nav{display:none}}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:16px}
+.rgrid a{display:block;text-align:center;padding:5px 0;border-radius:4px;text-decoration:none;color:var(--sea);background:#efece4;font-weight:600;font-size:12px}
+.rgrid a.on{background:var(--sea);color:#fff}
+.rgrid a:hover{background:#e2ddd2}.rgrid a.on:hover{background:var(--sea)}
+.onav a{display:flex;gap:6px;padding:5px 6px;border-radius:4px;text-decoration:none;color:#333}
+.onav a span{color:var(--brass);font-weight:700;min-width:3.4em}
+.onav a.on{background:#e6e1d6}
+.onav .hasp{margin-left:auto;color:var(--sealt);font-size:11px}
+.navh{font:600 11px var(--ui);letter-spacing:.12em;color:#8a857a;text-transform:uppercase;margin:14px 0 6px}
+h1.dej{font:700 30px/1.15 var(--ui);color:var(--sea);letter-spacing:.05em;margin:0}
+.dej-sub{font-style:italic;color:var(--gray);margin:.35em 0 1.3em}
+details.reg{background:var(--note);border-left:4px solid var(--brass);padding:.5em 1em;margin:0 0 1.2em;font-size:.9em;color:#4a4438}
+details.reg summary{cursor:pointer;font:600 12px var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+details.reg p{margin:.6em 0}
+.osoby{font:14px/1.5 var(--ui);margin:0 0 1em;padding:0;list-style:none;columns:2;column-gap:2em}
+.osoby li{break-inside:avoid;margin-bottom:.2em}
+.osoby b{color:var(--sea)}
+.osoby .nep{color:var(--gray)}
+section.obraz{border-top:1px solid var(--line);margin-top:40px;padding-top:6px}
+section.obraz h2{font:700 15px/1.3 var(--ui);color:var(--sealt);letter-spacing:.08em;text-transform:uppercase;margin:.8em 0 1em}
+.oid{color:var(--brass);font-weight:700;margin-right:.35em}
+p.cue{margin:.2em 0 .7em;padding-left:1.5em;text-indent:-1.5em}
+.meno{font:700 13px var(--ui);color:var(--sea);letter-spacing:.05em;margin-right:.3em}
+p.rez{color:var(--gray);font-size:.93em;margin:.5em 0 .85em 1.5em}
+.titulok{margin:1.2em auto;padding:.75em 1em;text-align:center;background:var(--tit);border-top:2px solid var(--sealt);border-bottom:2px solid var(--sealt);font:700 13.5px/1.45 var(--ui);letter-spacing:.14em;color:var(--sea)}
+.tit-lead{text-align:center;font-style:italic;color:var(--gray);font-size:.82em;margin:1.2em 0 -.6em}
+.note{background:var(--note);border-left:4px solid var(--brass);padding:.2em 1em;font-size:.9em;color:#4a4438;margin:1em 0}
+.divider{text-align:center;color:var(--sealt);letter-spacing:.6em;margin:1.6em 0}
+.koniec{text-align:center;font-style:italic;color:var(--gray);margin-top:3em}
+.pager{display:flex;justify-content:space-between;margin-top:60px;font:14px var(--ui)}
+.pager a{text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:6px;background:#fff}
+/* karta scény */
+.karta .k-head{font:700 15px/1.3 var(--ui);color:var(--ink);margin:0 0 10px}
+.karta dl{margin:0 0 12px}
+.karta dt{font:600 10.5px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#8a857a;margin-top:8px}
+.karta dd{margin:2px 0 0}
+.karta dd.prvky{color:var(--sea);font-weight:600}
+.k-sec{font:600 10.5px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#8a857a;margin:16px 0 6px;border-top:1px solid var(--line);padding-top:12px}
+.karta figure{margin:0}
+.karta img{width:100%;display:block;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:zoom-in}
+.karta figcaption{font-size:12px;color:var(--gray);margin-top:5px}
+.k-tit{font:700 11px/1.4 var(--ui);letter-spacing:.12em;color:var(--sea);background:var(--tit);padding:6px 8px;margin-top:10px;text-align:center}
+.pozn{padding-left:1.1em;margin:10px 0 0;color:#444;font-size:13px}
+.pozn li{margin-bottom:6px}
+.miss{color:#9a9488;font-style:italic;margin:4px 0}
+.fab{display:none}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(10,12,14,.88);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:94vh;background:#fff;border-radius:4px}
+/* úvod */
+.wrap{max-width:1180px;margin:0 auto;padding:30px 28px 100px}
+.hero{display:flex;gap:36px;align-items:center;margin:10px 0 34px}
+.hero img{width:230px;height:230px;object-fit:cover;border-radius:6px}
+.hero .eyebrow{font:600 12px var(--ui);letter-spacing:.2em;color:var(--gray)}
+.hero h1{font:800 54px/1 var(--ui);letter-spacing:.08em;color:var(--sea);margin:.15em 0 .2em}
+.hero .q{font-style:italic;color:var(--sea);font-size:20px;margin:.6em 0}
+.hero .meta{font:13px var(--ui);color:var(--gray)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;font:14px var(--ui)}
+.links a{padding:8px 13px;border-radius:6px;background:#fff;border:1px solid var(--line);text-decoration:none}
+.parth{font:600 12px var(--ui);letter-spacing:.16em;text-transform:uppercase;color:#8a857a;margin:28px 0 10px}
+.acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.ac{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font:13px/1.4 var(--ui)}
+.ac>a{text-decoration:none;color:var(--ink);display:block}
+.ac .r{font:800 22px var(--ui);color:var(--sea)}
+.ac .n{font-weight:700;font-size:15px;margin-left:6px}
+.ac .s{display:block;color:var(--gray);font-style:italic;margin:2px 0 8px}
+.ac ol{margin:0;padding:0;list-style:none}
+.ac li a{display:flex;gap:6px;text-decoration:none;color:#333;padding:1px 0}
+.ac li a span{color:var(--brass);font-weight:700;min-width:3.4em}
+.ac li a:hover{color:var(--sealt)}
+.ac .b{float:right;font-size:11px;color:var(--sealt);background:var(--tit);padding:2px 6px;border-radius:9px}
+.prest{grid-column:1/-1;text-align:center;font:600 12px var(--ui);letter-spacing:.2em;color:var(--brass);padding:10px;border-top:1px dashed var(--brass);border-bottom:1px dashed var(--brass)}
+/* galéria scény */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:10px}
+.g{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;text-decoration:none;color:var(--ink);font:12px/1.35 var(--ui);display:flex;flex-direction:column}
+.g img{width:100%;aspect-ratio:860/820;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+.g .ph{aspect-ratio:860/820;display:flex;align-items:center;justify-content:center;background:#f4f1ea;color:#9a9488;font-style:italic;padding:12px;text-align:center;border-bottom:1px solid var(--line)}
+.g .t{padding:7px 9px}
+.g .t b{color:var(--brass)}
+.g .t i{display:block;color:var(--gray);margin-top:2px}
+.g:hover{border-color:var(--sealt)}
+h2.gh{font:700 16px var(--ui);color:var(--sea);margin:30px 0 10px}
+h2.gh a{text-decoration:none}
+/* dokumenty */
+.doc{display:grid;grid-template-columns:220px minmax(0,1fr)}
+.doc>nav{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));overflow:auto;border-right:1px solid var(--line);padding:18px 12px;font:13px/1.4 var(--ui)}
+.doc>nav a{display:block;padding:4px 6px;border-radius:4px;text-decoration:none;color:#333}
+.doc>nav a.on{background:#e6e1d6}
+.doc>main{padding:24px 48px 120px;max-width:1100px}
+.doc h1,.doc h2,.doc h3{font-family:var(--ui);color:var(--sea)}
+.doc h1{font-size:28px}.doc h2{font-size:20px;margin-top:1.6em}.doc h3{font-size:16px}
+.doc main img{max-width:100%}
+.tbl{overflow-x:auto;margin:1em 0}
+.doc table{border-collapse:collapse;font:13px/1.4 var(--ui);background:#fff}
+.doc th,.doc td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+.doc th{background:#f1eee6}
+.doc blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--brass);background:var(--note)}
+.doc pre{background:#f1eee6;padding:12px;overflow:auto;font-size:13px}
+.doc pre.mermaid{background:#fff;text-align:center}
+@media (max-width:1280px){.act{grid-template-columns:minmax(0,1fr) 420px}.act>nav{display:none}}
+@media (max-width:900px){
+ .act{grid-template-columns:1fr}.act>main{padding:20px 18px 120px}
+ .act>aside{position:fixed;left:0;right:0;bottom:0;top:auto;height:70vh;z-index:50;transform:translateY(102%);transition:transform .2s;box-shadow:0 -6px 24px rgba(0,0,0,.2)}
+ body.panel .act>aside{transform:none}
+ .fab{display:block;position:fixed;right:14px;bottom:14px;z-index:60;border:0;border-radius:22px;padding:10px 16px;background:var(--sea);color:#fff;font:600 13px var(--ui);box-shadow:0 3px 10px rgba(0,0,0,.25)}
+ .doc{grid-template-columns:1fr}.doc>nav{display:none}.doc>main{padding:20px 18px}
+ .hero{flex-direction:column;align-items:flex-start}
+ header.top .ver,header.top .hide-s{display:none}
+}</style></head><body data-root="../" data-ext=".html" data-prev="../dejstvo/IV.html" data-next="../dejstvo/VI.html"><header class="top"><a class="brand" href="../">KON-TIKI</a><a href="../">Dejstvá</a><span class="sp"></span><input id="jump" placeholder="skok: VIII.5  (g)" autocomplete="off"><span class="ver">verzia 2 · kolo 12 · október 2026</span></header><div class="act bez"><nav><div class="navh">Dejstvá</div><div class="rgrid"><a href="../dejstvo/I.html">I</a><a href="../dejstvo/II.html">II</a><a href="../dejstvo/III.html">III</a><a href="../dejstvo/IV.html">IV</a><a href="../dejstvo/V.html" class="on">V</a><a href="../dejstvo/VI.html">VI</a><a href="../dejstvo/VII.html">VII</a><a href="../dejstvo/VIII.html">VIII</a><a href="../dejstvo/IX.html">IX</a><a href="../dejstvo/X.html">X</a><a href="../dejstvo/XI.html">XI</a><a href="../dejstvo/XII.html">XII</a><a href="../dejstvo/XIII.html">XIII</a><a href="../dejstvo/XIV.html">XIV</a><a href="../dejstvo/XV.html">XV</a><a href="../dejstvo/XVI.html">XVI</a></div><div class="navh">Obrazy</div><div class="onav"><a href="#V-1" data-id="V-1"><span>V.1</span>Deväť kmeňov</a><a href="#V-2" data-id="V-2"><span>V.2</span>Predstavím vám vás</a><a href="#V-3" data-id="V-3"><span>V.3</span>Neuhne</a><a href="#V-4" data-id="V-4"><span>V.4</span>Prvý krok</a></div><p class="keys" style="margin-top:20px"><kbd>j</kbd> <kbd>k</kbd> obraz<br><kbd>←</kbd> <kbd>→</kbd> dejstvo<br><kbd>g</kbd> skok</p></nav><main><h1 class="dej">V. DEJSTVO — CALLAO</h1><div class="dej-sub">Callao · deväť kmeňov</div><details class="reg"><summary>Register · poznámky</summary><p><strong>Register:</strong> vrchol prvej polovice — posádka po prvý raz na jednom mieste. Prístav v Callau, kopa balzových kmeňov, slnko. Peňazí niet; je tu drevo, more a piati chlapi. Toto je kapitola o mužskom obdive, rešpekte a láske, ktorá sa nikdy nepomenuje — nesie ju humor, dekórum a to, čo sa nepovie. Nervozita je pod všetkým; držia ju vtipom. Herman nesie cit, Erik a Bengt komiku, Knut pokoj, Kapitán váhu. Vnútorné stavy sa hrajú ako akcia.</p><p><strong>Pozn. k inscenácii:</strong> papagáj je späť pri Kapitánovi — po prvý raz od Larviku „na slobode&quot;, lebo Hermanová je ďaleko a nemá ho kto poslať za dvere. Titulky (VERZÁLKY) sa vracajú.</p></details><ul class="osoby"><li><b>KAPITÁN</b></li><li><b>HERMAN</b> — prvý dôstojník, zástupca kapitána</li><li><b>ERIK</b> — navigátor</li><li><b>BENGT</b> — vedec a dokumentarista výpravy</li><li><b>KNUT</b> — rádiotelegrafista</li><li><b>PAPOUŠEK</b> — zelený papagáj</li></ul><section class="obraz" id="V-1"><h2><span class="oid">V.1</span>Deväť kmeňov</h2><div class="titulok">CALLAO. PRÍSTAV, KDE SA DREVO STÁVA LOĎOU.</div><p class="rez"><em>Prístavná hrádza. Slnko na výške. Kopa balzových kmeňov — deväť, obrovské, svetlé, ešte voňajúce lesom. Nie sú zviazané; ležia vedľa seba ako niečo, čo sa ešte len rozhodne, či bude plť, alebo hranica dreva. Na kmeňoch sedia traja muži a čakajú.</em></p><p class="rez"><em>ERIK — pero za uchom, zošit na kolene, čosi prepočítava po tretíkrát. BENGT — kniha na kolene, druhá pod zadkom namiesto vankúša, tretia po ruke. KNUT — trochu bokom, pokojný, díva sa na more, akoby už počúval, čo sa z neho ozve.</em></p><p class="rez"><em>Chvíľu ticho. Len prístav, čajky, voda.</em></p><p class="cue"><span class="meno">BENGT</span> <em>(nezdvihne oči od knihy)</em> Erik.</p><p class="cue"><span class="meno">ERIK</span> Hm.</p><p class="cue"><span class="meno">BENGT</span> Koľkýkrát to rátaš?</p><p class="cue"><span class="meno">ERIK</span> Kým mi nevyjde to isté dvakrát za sebou.</p><p class="cue"><span class="meno">BENGT</span> A vyšlo?</p><p class="cue"><span class="meno">ERIK</span> <em>(beat)</em> Trikrát. Zakaždým inak.</p><p class="cue"><span class="meno">BENGT</span> To je na tebe to upokojujúce. Aj tvoje chyby majú systém.</p><p class="rez"><em>KNUT sa nepatrne usmeje, nespustí oči z mora. Ticho sa vráti — ale je v ňom nervozita, ktorú nikto nepomenuje.</em></p><p class="cue"><span class="meno">KNUT</span> <em>(po chvíli, ticho)</em> Sedíme na tom, čo nás má niesť.</p><p class="cue"><span class="meno">BENGT</span> <em>(zavrie knihu)</em> To je najmúdrejšie, čo tu dnes odznelo. A povedal to muž, čo za celé ráno prehovoril prvý raz.</p><p class="cue"><span class="meno">KNUT</span> Šetrím slová.</p><p class="cue"><span class="meno">ERIK</span> Na to máš vysielačku.</p><p class="cue"><span class="meno">KNUT</span> Tá posiela cudzie.</p><p class="rez"><em>Ticho. KNUT, stále s očami na mori:</em></p><p class="cue"><span class="meno">KNUT</span> Bengt. Krk.</p><p class="cue"><span class="meno">BENGT</span> Čo krk?</p><p class="cue"><span class="meno">KNUT</span> Horí.</p><p class="rez"><em>BENGT si siahne na zátylok. Syknutie. Vyhrnie si golier a číta ďalej.</em></p><p class="rez"><em>Prístavom prejde tieň. Prichádza KAPITÁN — v ruke klietka, v nej PAPOUŠEK. Vedľa neho HERMAN. Traja na kmeňoch vstanú — nie na povel, len tak, ako sa vstáva, keď príde niekto, na koho sa čakalo.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Sadnite.</p><p class="rez"><em>Nikto nesadne.</em></p><p class="cue"><span class="meno">KAPITÁN</span> <em>(náznak úsmevu)</em> Dobre. Stojme.</p><p class="rez"><em>Položí klietku na kmeň. Chvíľu sa díva na tých troch, potom na drevo pod nimi.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Poznáte sa. Časť z vás. Časť z počutia, časť z hádok. <em>(pozrie na Erika a Bengta)</em> Odteraz sa poznáte ako posádka. To je iné. Tak vám predstavím vás.</p></section><section class="obraz" id="V-2"><h2><span class="oid">V.2</span>Predstavím vám vás</h2><p class="rez"><em>Pozn. k réžii: celý tento obraz sa hrá ponad prácu. Kým Kapitán hovorí, chlapi kotúľajú, dvíhajú a rovnajú prvý kmeň na miesto — vzoprie sa, zastane, treba ho podložiť. Nikto počas predstavovania nestojí. Repliky padajú medzi „zdvihni&quot;, „drž&quot;, „ešte kúsok&quot;. Ceremoniál sa deje rukami.</em></p><p class="rez"><em>KAPITÁN položí ruku Hermanovi na plece — a Herman mu pod ňou podá koniec lana, aby držal.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Herman. Prvý dôstojník. Keď ja poviem „vľavo&quot;, on povie „prečo&quot; — a väčšinou má pravdu.</p><p class="cue"><span class="meno">HERMAN</span> <em>(od uzla, bez pozretia)</em> Vždy. <em>(ku Knutovi)</em> Drž. Nie — drž, nepodopieraj.</p><p class="cue"><span class="meno">KAPITÁN</span> Kedysi dekan tej istej univerzity, čo ma vyhodila — ešte keď robila výskum, nie repku pre sponzorov. <em>(pozrie na kmene)</em> Uzly, ktoré nás udržia nad vodou, viaže on. Ak sa potopíme, bude to jediný raz, čo sa zmýlil.</p><p class="cue"><span class="meno">HERMAN</span> <em>(sucho)</em> A bude to naposledy.</p><p class="rez"><em>KAPITÁN prejde k Erikovi.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Erik. Navigátor. Muž čísel. <em>(Beat.)</em> Keď sme sa tu ešte nepoznali ani po mene, robili sme spolu na jednom výskume — každý na inom konci sveta, listami, čo išli tri týždne. Nikdy sme si nepodali ruku. A predsa som vedel: keď mi Erik pošle číslo, môžem naň postaviť loď. <em>(pozrie naňho)</em> Dnes na ňom loď staviam.</p><p class="cue"><span class="meno">ERIK</span> Číslo bude sedieť. <em>(Beat.)</em> Či bude sedieť aj more, to už neriadim ja.</p><p class="rez"><em>Kmeň sa zošmykne z podložky. Štyri ruky naraz. Nikto nedýcha, kým sa nezastaví.</em></p><p class="cue"><span class="meno">HERMAN</span> Podlož. <em>(k Bengtovi)</em> Ty. Tú kratšiu.</p><p class="rez"><em>BENGT podloží. Nesprávnu. HERMAN ju bez slova vymení.</em></p><p class="rez"><em>KAPITÁN k Bengtovi.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Bengt. Vedec. Číta viac, než je zdravé — a našej výprave sa upísal ešte raz navyše: bude ju zapisovať. Každý deň. Každú vlnu. Každú hádku s Erikom. <em>(Beat, tichšie.)</em> A ak sa nevrátime, Bengt sa postará, aby sa aspoň vedelo, ako sme to mysleli.</p><p class="cue"><span class="meno">BENGT</span> Budem písať pravdu. <em>(pozrie na Erika)</em> Čiže aj to, koľkokrát sa Erik pomýlil.</p><p class="cue"><span class="meno">ERIK</span> To bude krátka kapitola.</p><p class="cue"><span class="meno">BENGT</span> To bude celá kniha.</p><p class="rez"><em>KAPITÁN ku Knutovi.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Knut. Rádiotelegraf. Naše jediné spojenie so svetom, keď okolo nás nebude nič, len voda. <em>(Beat.)</em> Keď sa nám niečo stane, Knut je ten, cez koho sa to svet dozvie. A keď sa nám nestane nič — bude vysielať aj tak.</p><p class="cue"><span class="meno">KNUT</span> Vždy niekto počúva. <em>(Beat.)</em> Aj keď je ticho.</p><p class="rez"><em>KAPITÁN sa zastaví. Poobzerá tú štvoricu. Príde na seba — a nevie ďalej.</em></p><p class="cue"><span class="meno">KAPITÁN</span> A ja som —</p><p class="rez"><em>Zarazí sa. O sebe sa hovorí najťažšie. Nie zo strachu — skôr preto, že na to niet slov, ktoré by neboli buď primálo, alebo priveľa. Odmlčí sa. Pozrie na more.</em></p><p class="rez"><em>Ticho. Chlapi čakajú.</em></p><p class="rez"><em>A vtedy prevezme slovo HERMAN. Spraví krok dopredu. Hovorí k chlapom — ale vlastne o Kapitánovi, ktorý stojí vedľa a nemá kam ujsť.</em></p></section><section class="obraz" id="V-3"><h2><span class="oid">V.3</span>Neuhne</h2><p class="cue"><span class="meno">HERMAN</span> Jeho vám predstavím ja. On to nespraví — a vy to vedieť musíte skôr, než nasadnete na to drevo.</p><p class="rez"><em>Beat.</em></p><p class="cue"><span class="meno">HERMAN</span> Poznám ho dlhé roky. Dlhšie, než je milé nám obom. Videl som ho, keď mal pravdu a nikto ho nepočúval. Videl som ho, keď sa mýlil a priznal to skôr, než ho niekto stihol pristihnúť. Oboje je vzácne. Spolu to takmer nestretneš.</p><p class="cue"><span class="meno">HERMAN</span> Bol v Polynézii. Nie na dovolenke — žil tam rok. Sedel so starcami, počúval ich rozprávky. <em>(Beat.)</em> Vrátil sa s tým, čo mu vedecká obec hodila do koša: že tí ľudia prišli z východu. <em>(ukáže na more)</em> Z tejto strany.</p><p class="cue"><span class="meno">BENGT</span> <em>(ticho)</em> To vieme, Herman.</p><p class="cue"><span class="meno">HERMAN</span> Viete to z knihy. On to overil nohami. <em>(Beat.)</em> A my sme na tomto dreve, aby sme to dokázali aj tým, čo neveria ničomu, čo si nevedia prepočítať.</p><p class="rez"><em>HERMAN dotiahne uzol, ktorý celý čas držal. Až potom sa otočí — ku Kapitánovi aj o ňom naraz.</em></p><p class="cue"><span class="meno">HERMAN</span> A poviem vám o ňom to hlavné. <em>(pozrie na Kapitána)</em> Je to muž, s ktorým sa plavím na najvzdialenejší koniec sveta na plti zo zviazaného dreva. Dobrovoľne. S otvorenými očami. A viete prečo?</p><p class="rez"><em>Nikto neodpovie. Papagáj nakloní hlavu.</em></p><p class="cue"><span class="meno">HERMAN</span> Nie preto, že by si bol istý. Istý si nie je. Ani teraz. Keby vám tvrdil, že vie, ako to dopadne, neveril by som mu ani slovo — a zišiel by som z tohto móla. <em>(Beat.)</em> Idem s ním preto, že som ho nikdy nevidel uhnúť. Ani raz. Nemá istotu — a neustúpi. To dvoje spolu je vzácnejšie než celá tá plť pod vami.</p><p class="rez"><em>Ticho. ERIK si vyberie pero spoza ucha a nevie, čo s ním.</em></p><p class="rez"><em>KAPITÁN sa pozrie na Hermana. Nepovie nič. HERMAN mu hodí druhý koniec lana: drž.</em></p><p class="rez"><em>A do toho ticha, presne vtedy, keď treba:</em></p><p class="cue"><span class="meno">PAPOUŠEK</span> Blbec.</p><p class="rez"><em>Napätie praskne. Chlapi sa zasmejú — úľavou aj preto, že vták povedal presne to, čo sa v takej chvíli povedať musí.</em></p><p class="cue"><span class="meno">BENGT</span> <em>(k papagájovi)</em> Konečne niekto, kto to zhrnul.</p><p class="cue"><span class="meno">HERMAN</span> <em>(sucho)</em> Naučil ho to najlepší dekan, akého tá univerzita mala.</p><p class="cue"><span class="meno">KAPITÁN</span> Ty?</p><p class="cue"><span class="meno">HERMAN</span> Ja. <em>(Beat.)</em> Jediné, na čo som tam bol užitočný.</p></section><section class="obraz" id="V-4"><h2><span class="oid">V.4</span>Prvý krok</h2><p class="rez"><em>ERIK otvorí zošit, otočí ho ku Kapitánovi.</em></p><p class="cue"><span class="meno">ERIK</span> Kým sa smejeme — mám tu čísla. Presne toľko peňazí nám zostalo.</p><p class="cue"><span class="meno">BENGT</span> <em>(nakukne)</em> To je prázdna strana.</p><p class="cue"><span class="meno">ERIK</span> Presne toľko.</p><p class="cue"><span class="meno">BENGT</span> Aha. <em>(zavrie knihu; po prvý raz celkom vážne)</em> Kapitán. Otázka, ktorú tu ešte nikto nepovedal nahlas. Dá sa vôbec vyplávať? Nemáme zásoby. Chýbajú nám dva tucty lán. Máme jednu jedinú malú plachtu. A rádiotelegraf — to jediné, čo nás spojí so svetom — trčí stále na colnici. <em>(Beat.)</em> Toto už nie je hádka o ťažisku. Toto sú peniaze. A tie rozhodnú, či je z nás posádka, alebo piati chlapi na kope dreva.</p><p class="rez"><em>KAPITÁN sa naňho pozrie. Dlho. Žiadny úsmev.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Neviem.</p><p class="rez"><em>Ticho. Toto od neho ešte nepočuli.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Peniaze nemám, Bengt. Mám drevo a vás. <em>(položí dlaň na kmeň)</em> Začneme stavať. Zvyšok si požičiame, zbijeme alebo uviažeme. <em>(Beat.)</em> Ak to nevyjde, aspoň to drevo bude zviazané.</p><p class="cue"><span class="meno">BENGT</span> Univerzita nám nedá nič.</p><p class="cue"><span class="meno">ERIK</span> A my dvaja sme celkom iste prišli o robotu. <em>(Beat.)</em> Aspoň tak to ten pajac definoval.</p><p class="rez"><em>KAPITÁN chvíľu mlčí. Pozrie na oboch — na počtára aj na skeptika, ktorí sem prišli aj tak.</em></p><p class="cue"><span class="meno">KAPITÁN</span> A aj napriek tomu ste tu obaja.</p><p class="rez"><em>BENGT a ERIK si vymenia pohľad. ERIK zavrie zošit.</em></p><p class="rez"><em>Beat.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Herman. Ukáž im finálne výkresy. Nech si to zajtra ráno prejdeme kmeň po kmeni.</p><p class="rez"><em>HERMAN prikývne. Z plátennej rúry vytiahne zvitok — finálne výkresy plte. Rozvinie ich na kmeni, rohy pridrží dlaňou. A kým to robí, poobzerá tú štvoricu okolo dreva. Ráta ich pohľadom.</em></p><p class="cue"><span class="meno">HERMAN</span> Piati.</p><p class="cue"><span class="meno">KAPITÁN</span> Piati.</p><p class="cue"><span class="meno">HERMAN</span> Šesť som povedal.</p><p class="cue"><span class="meno">KAPITÁN</span> Povedal.</p><p class="cue"><span class="meno">HERMAN</span> A šiesteho si nevyberieš ty. <em>(pozrie k mestu, k staniciam, k cestám, ktorými sa prichádza)</em> Ešte príde. Takí vždy prídu. Nájdeš ich ráno na móle, či ich pozveš, alebo nie.</p><p class="cue"><span class="meno">KAPITÁN</span> <em>(takmer pre seba)</em> Vždy prídu.</p><p class="rez"><em>Chvíľu nikto nič. More. Drevo. Piati muži okolo deviatich kmeňov.</em></p><p class="rez"><em>KNUT sadne späť na kmeň. Po ňom ERIK. Po ňom BENGT. HERMAN si položí klietku vedľa seba. KAPITÁN ostane chvíľu stáť — pozrie na tých štyroch na dreve, ktoré ich má niesť. Potom si sadne medzi nich.</em></p><p class="rez"><em>Po prvý raz sedia všetci na jednej lodi. Ešte to nie je loď.</em></p><div class="titulok">EŠTE TO NEBOLA LOĎ.</div><p class="rez"><em>Svetlo dole.</em></p><p class="koniec">— koniec V. dejstva —</p></section><div class="pager"><a href="../dejstvo/IV.html">← IV. dejstvo</a><a href="../dejstvo/VI.html">VI. dejstvo →</a></div></main></div><div id="lb"><img alt=""></div><script>
+(function(){
+  var R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI'];
+  var jump=document.getElementById('jump');
+  function go(v){
+    v=v.trim().toUpperCase().replace(/[\s,]+/g,'.');
+    var m=v.match(/^([IVX]+|\d+)(?:[.\-·]?(\d+|M))?$/); if(!m) return false;
+    var r=m[1]; if(/^\d+$/.test(r)) r=R[parseInt(r,10)-1]; if(R.indexOf(r)<0) return false;
+    var b=document.body, root=b.getAttribute('data-root')||'/', ext=b.getAttribute('data-ext')||'';
+    location.href=root+'dejstvo/'+r+ext+(m[2]?'#'+r+'-'+m[2]:''); return true;
+  }
+  if(jump) jump.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){ if(!go(jump.value)) jump.style.outline='2px solid #e9a'; }
+    if(e.key==='Escape') jump.blur();
+  });
+  var lb=document.getElementById('lb'), lbi=lb&&lb.querySelector('img');
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.classList&&t.classList.contains('zoom')){ e.preventDefault(); lbi.src=t.src; lb.classList.add('on'); }
+    else if(lb&&lb.classList.contains('on')) lb.classList.remove('on');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.target.matches('input,textarea')||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key==='Escape'&&lb) lb.classList.remove('on');
+    if(e.key==='g'||e.key==='/'){ if(jump){ e.preventDefault(); jump.focus(); jump.select(); } }
+  });
+})();
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('section.obraz'));
+  var cards={}, links={};
+  [].forEach.call(document.querySelectorAll('.karta'),function(c){cards[c.getAttribute('data-for')]=c;});
+  [].forEach.call(document.querySelectorAll('.onav a[data-id]'),function(a){links[a.getAttribute('data-id')]=a;});
+  var nav=document.querySelector('.act>nav'), fab=document.querySelector('.fab');
+  var body=document.body, cur=null, user=false;
+  var prev=body.getAttribute('data-prev'), next=body.getAttribute('data-next');
+  function activate(id){
+    if(!id||id===cur||!(cards[id]||links[id])) return; cur=id;
+    for(var k in cards) cards[k].hidden=(k!==id);
+    for(var k2 in links) links[k2].classList.toggle('on',k2===id);
+    if(fab&&cards[id]) fab.textContent='Scéna '+cards[id].querySelector('.oid').textContent;
+    var a=links[id];
+    if(a&&nav&&nav.offsetParent){ var top=a.offsetTop-nav.offsetTop;
+      if(top<nav.scrollTop+40||top>nav.scrollTop+nav.clientHeight-60) nav.scrollTop=top-nav.clientHeight/2; }
+    if(user) history.replaceState(null,'','#'+id);
+  }
+  function spy(){
+    var y=window.innerHeight*0.3, best=secs[0];
+    for(var i=0;i<secs.length;i++){ if(secs[i].getBoundingClientRect().top<=y) best=secs[i]; else break; }
+    if(best) activate(best.id);
+  }
+  var tick=false;
+  window.addEventListener('scroll',function(){ user=true; if(!tick){ tick=true; requestAnimationFrame(function(){ tick=false; spy(); }); } },{passive:true});
+  var h=location.hash.slice(1);
+  if(h&&cards[h]) activate(h); else spy();
+  function goSec(d){
+    var i=-1; for(var k=0;k<secs.length;k++) if(secs[k].id===cur) i=k;
+    var s=secs[Math.max(0,Math.min(secs.length-1,i+d))];
+    if(s){ s.scrollIntoView({behavior:'smooth'}); history.replaceState(null,'','#'+s.id); activate(s.id); }
+  }
+  if(fab) fab.addEventListener('click',function(e){ e.stopPropagation(); body.classList.toggle('panel'); });
+  document.addEventListener('keydown',function(e){
+    if(e.target.matches('input,textarea')||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key==='j'||e.key==='n') goSec(1);
+    else if(e.key==='k'||e.key==='p') goSec(-1);
+    else if(e.key==='ArrowRight'&&next) location.href=next;
+    else if(e.key==='ArrowLeft'&&prev) location.href=prev;
+    else if(e.key==='s') body.classList.toggle('panel');
+  });
+})();</script></body></html>

@@ -1,0 +1,203 @@
+<!doctype html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>XI. dejstvo · Kon-Tiki</title><style>
+:root{--sea:#1F4E5F;--sealt:#2E6E84;--gray:#5A5A5A;--note:#F3EFE7;--brass:#B08D57;--tit:#EAEFF1;--paper:#fbfaf7;--side:#f3f0e9;--ink:#1d1d1b;--line:#e2ddd2;--hdr:48px;--ui:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(var(--hdr) + 14px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 Georgia,"Times New Roman",serif}
+a{color:var(--sealt)}
+code{font:.85em ui-monospace,Menlo,monospace;background:#efece4;padding:0 .25em;border-radius:3px}
+header.top{position:sticky;top:0;z-index:40;height:var(--hdr);display:flex;align-items:center;gap:20px;padding:0 18px;background:var(--sea);color:#fff;font:14px/1 var(--ui)}
+header.top a{color:#cfe0e6;text-decoration:none}
+header.top a:hover,header.top a.on{color:#fff}
+header.top .brand{font-weight:700;letter-spacing:.16em;color:#fff}
+header.top .sp{flex:1}
+header.top input{width:9.5em;padding:6px 9px;border-radius:5px;border:0;background:#2b6276;color:#fff;font:13px var(--ui)}
+header.top input::placeholder{color:#a9c4cd}
+header.top .ver{font-size:12px;color:#a9c4cd}
+.keys{font:12px var(--ui);color:#8a857a}
+.keys kbd{font:11px var(--ui);border:1px solid #cfc9bc;border-bottom-width:2px;border-radius:3px;padding:0 4px;background:#fff;color:#444}
+/* dejstvo */
+.act{display:grid;grid-template-columns:210px minmax(0,1fr) 470px}
+.act>nav,.act>aside{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));overflow:auto}
+.act>nav{border-right:1px solid var(--line);padding:16px 12px 40px;font:13px/1.35 var(--ui)}
+.act>main{padding:30px 52px 140px;max-width:840px;width:100%;justify-self:center}
+.act>aside{border-left:1px solid var(--line);background:var(--side);padding:16px 18px 60px;font:14px/1.45 var(--ui)}
+.act.bez{grid-template-columns:210px minmax(0,1fr)}.act.bez>nav{display:block}
+@media (max-width:900px){.act.bez{grid-template-columns:1fr}.act.bez>nav{display:none}}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:16px}
+.rgrid a{display:block;text-align:center;padding:5px 0;border-radius:4px;text-decoration:none;color:var(--sea);background:#efece4;font-weight:600;font-size:12px}
+.rgrid a.on{background:var(--sea);color:#fff}
+.rgrid a:hover{background:#e2ddd2}.rgrid a.on:hover{background:var(--sea)}
+.onav a{display:flex;gap:6px;padding:5px 6px;border-radius:4px;text-decoration:none;color:#333}
+.onav a span{color:var(--brass);font-weight:700;min-width:3.4em}
+.onav a.on{background:#e6e1d6}
+.onav .hasp{margin-left:auto;color:var(--sealt);font-size:11px}
+.navh{font:600 11px var(--ui);letter-spacing:.12em;color:#8a857a;text-transform:uppercase;margin:14px 0 6px}
+h1.dej{font:700 30px/1.15 var(--ui);color:var(--sea);letter-spacing:.05em;margin:0}
+.dej-sub{font-style:italic;color:var(--gray);margin:.35em 0 1.3em}
+details.reg{background:var(--note);border-left:4px solid var(--brass);padding:.5em 1em;margin:0 0 1.2em;font-size:.9em;color:#4a4438}
+details.reg summary{cursor:pointer;font:600 12px var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+details.reg p{margin:.6em 0}
+.osoby{font:14px/1.5 var(--ui);margin:0 0 1em;padding:0;list-style:none;columns:2;column-gap:2em}
+.osoby li{break-inside:avoid;margin-bottom:.2em}
+.osoby b{color:var(--sea)}
+.osoby .nep{color:var(--gray)}
+section.obraz{border-top:1px solid var(--line);margin-top:40px;padding-top:6px}
+section.obraz h2{font:700 15px/1.3 var(--ui);color:var(--sealt);letter-spacing:.08em;text-transform:uppercase;margin:.8em 0 1em}
+.oid{color:var(--brass);font-weight:700;margin-right:.35em}
+p.cue{margin:.2em 0 .7em;padding-left:1.5em;text-indent:-1.5em}
+.meno{font:700 13px var(--ui);color:var(--sea);letter-spacing:.05em;margin-right:.3em}
+p.rez{color:var(--gray);font-size:.93em;margin:.5em 0 .85em 1.5em}
+.titulok{margin:1.2em auto;padding:.75em 1em;text-align:center;background:var(--tit);border-top:2px solid var(--sealt);border-bottom:2px solid var(--sealt);font:700 13.5px/1.45 var(--ui);letter-spacing:.14em;color:var(--sea)}
+.tit-lead{text-align:center;font-style:italic;color:var(--gray);font-size:.82em;margin:1.2em 0 -.6em}
+.note{background:var(--note);border-left:4px solid var(--brass);padding:.2em 1em;font-size:.9em;color:#4a4438;margin:1em 0}
+.divider{text-align:center;color:var(--sealt);letter-spacing:.6em;margin:1.6em 0}
+.koniec{text-align:center;font-style:italic;color:var(--gray);margin-top:3em}
+.pager{display:flex;justify-content:space-between;margin-top:60px;font:14px var(--ui)}
+.pager a{text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:6px;background:#fff}
+/* karta scény */
+.karta .k-head{font:700 15px/1.3 var(--ui);color:var(--ink);margin:0 0 10px}
+.karta dl{margin:0 0 12px}
+.karta dt{font:600 10.5px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#8a857a;margin-top:8px}
+.karta dd{margin:2px 0 0}
+.karta dd.prvky{color:var(--sea);font-weight:600}
+.k-sec{font:600 10.5px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#8a857a;margin:16px 0 6px;border-top:1px solid var(--line);padding-top:12px}
+.karta figure{margin:0}
+.karta img{width:100%;display:block;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:zoom-in}
+.karta figcaption{font-size:12px;color:var(--gray);margin-top:5px}
+.k-tit{font:700 11px/1.4 var(--ui);letter-spacing:.12em;color:var(--sea);background:var(--tit);padding:6px 8px;margin-top:10px;text-align:center}
+.pozn{padding-left:1.1em;margin:10px 0 0;color:#444;font-size:13px}
+.pozn li{margin-bottom:6px}
+.miss{color:#9a9488;font-style:italic;margin:4px 0}
+.fab{display:none}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(10,12,14,.88);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:94vh;background:#fff;border-radius:4px}
+/* úvod */
+.wrap{max-width:1180px;margin:0 auto;padding:30px 28px 100px}
+.hero{display:flex;gap:36px;align-items:center;margin:10px 0 34px}
+.hero img{width:230px;height:230px;object-fit:cover;border-radius:6px}
+.hero .eyebrow{font:600 12px var(--ui);letter-spacing:.2em;color:var(--gray)}
+.hero h1{font:800 54px/1 var(--ui);letter-spacing:.08em;color:var(--sea);margin:.15em 0 .2em}
+.hero .q{font-style:italic;color:var(--sea);font-size:20px;margin:.6em 0}
+.hero .meta{font:13px var(--ui);color:var(--gray)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;font:14px var(--ui)}
+.links a{padding:8px 13px;border-radius:6px;background:#fff;border:1px solid var(--line);text-decoration:none}
+.parth{font:600 12px var(--ui);letter-spacing:.16em;text-transform:uppercase;color:#8a857a;margin:28px 0 10px}
+.acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.ac{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font:13px/1.4 var(--ui)}
+.ac>a{text-decoration:none;color:var(--ink);display:block}
+.ac .r{font:800 22px var(--ui);color:var(--sea)}
+.ac .n{font-weight:700;font-size:15px;margin-left:6px}
+.ac .s{display:block;color:var(--gray);font-style:italic;margin:2px 0 8px}
+.ac ol{margin:0;padding:0;list-style:none}
+.ac li a{display:flex;gap:6px;text-decoration:none;color:#333;padding:1px 0}
+.ac li a span{color:var(--brass);font-weight:700;min-width:3.4em}
+.ac li a:hover{color:var(--sealt)}
+.ac .b{float:right;font-size:11px;color:var(--sealt);background:var(--tit);padding:2px 6px;border-radius:9px}
+.prest{grid-column:1/-1;text-align:center;font:600 12px var(--ui);letter-spacing:.2em;color:var(--brass);padding:10px;border-top:1px dashed var(--brass);border-bottom:1px dashed var(--brass)}
+/* galéria scény */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:10px}
+.g{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;text-decoration:none;color:var(--ink);font:12px/1.35 var(--ui);display:flex;flex-direction:column}
+.g img{width:100%;aspect-ratio:860/820;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+.g .ph{aspect-ratio:860/820;display:flex;align-items:center;justify-content:center;background:#f4f1ea;color:#9a9488;font-style:italic;padding:12px;text-align:center;border-bottom:1px solid var(--line)}
+.g .t{padding:7px 9px}
+.g .t b{color:var(--brass)}
+.g .t i{display:block;color:var(--gray);margin-top:2px}
+.g:hover{border-color:var(--sealt)}
+h2.gh{font:700 16px var(--ui);color:var(--sea);margin:30px 0 10px}
+h2.gh a{text-decoration:none}
+/* dokumenty */
+.doc{display:grid;grid-template-columns:220px minmax(0,1fr)}
+.doc>nav{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));overflow:auto;border-right:1px solid var(--line);padding:18px 12px;font:13px/1.4 var(--ui)}
+.doc>nav a{display:block;padding:4px 6px;border-radius:4px;text-decoration:none;color:#333}
+.doc>nav a.on{background:#e6e1d6}
+.doc>main{padding:24px 48px 120px;max-width:1100px}
+.doc h1,.doc h2,.doc h3{font-family:var(--ui);color:var(--sea)}
+.doc h1{font-size:28px}.doc h2{font-size:20px;margin-top:1.6em}.doc h3{font-size:16px}
+.doc main img{max-width:100%}
+.tbl{overflow-x:auto;margin:1em 0}
+.doc table{border-collapse:collapse;font:13px/1.4 var(--ui);background:#fff}
+.doc th,.doc td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+.doc th{background:#f1eee6}
+.doc blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--brass);background:var(--note)}
+.doc pre{background:#f1eee6;padding:12px;overflow:auto;font-size:13px}
+.doc pre.mermaid{background:#fff;text-align:center}
+@media (max-width:1280px){.act{grid-template-columns:minmax(0,1fr) 420px}.act>nav{display:none}}
+@media (max-width:900px){
+ .act{grid-template-columns:1fr}.act>main{padding:20px 18px 120px}
+ .act>aside{position:fixed;left:0;right:0;bottom:0;top:auto;height:70vh;z-index:50;transform:translateY(102%);transition:transform .2s;box-shadow:0 -6px 24px rgba(0,0,0,.2)}
+ body.panel .act>aside{transform:none}
+ .fab{display:block;position:fixed;right:14px;bottom:14px;z-index:60;border:0;border-radius:22px;padding:10px 16px;background:var(--sea);color:#fff;font:600 13px var(--ui);box-shadow:0 3px 10px rgba(0,0,0,.25)}
+ .doc{grid-template-columns:1fr}.doc>nav{display:none}.doc>main{padding:20px 18px}
+ .hero{flex-direction:column;align-items:flex-start}
+ header.top .ver,header.top .hide-s{display:none}
+}</style></head><body data-root="../" data-ext=".html" data-prev="../dejstvo/X.html" data-next="../dejstvo/XII.html"><header class="top"><a class="brand" href="../">KON-TIKI</a><a href="../">Dejstvá</a><span class="sp"></span><input id="jump" placeholder="skok: VIII.5  (g)" autocomplete="off"><span class="ver">verzia 2 · kolo 12 · október 2026</span></header><div class="act bez"><nav><div class="navh">Dejstvá</div><div class="rgrid"><a href="../dejstvo/I.html">I</a><a href="../dejstvo/II.html">II</a><a href="../dejstvo/III.html">III</a><a href="../dejstvo/IV.html">IV</a><a href="../dejstvo/V.html">V</a><a href="../dejstvo/VI.html">VI</a><a href="../dejstvo/VII.html">VII</a><a href="../dejstvo/VIII.html">VIII</a><a href="../dejstvo/IX.html">IX</a><a href="../dejstvo/X.html">X</a><a href="../dejstvo/XI.html" class="on">XI</a><a href="../dejstvo/XII.html">XII</a><a href="../dejstvo/XIII.html">XIII</a><a href="../dejstvo/XIV.html">XIV</a><a href="../dejstvo/XV.html">XV</a><a href="../dejstvo/XVI.html">XVI</a></div><div class="navh">Obrazy</div><div class="onav"><a href="#XI-1" data-id="XI-1"><span>XI.1</span>Kuchyňa, ráno</a><a href="#XI-2" data-id="XI-2"><span>XI.2</span>Kancelária, o hodinu neskôr</a><a href="#XI-3" data-id="XI-3"><span>XI.3</span>Chodba pred kanceláriou, v noci</a><a href="#XI-4" data-id="XI-4"><span>XI.4</span>Pred Hermanovým domom</a><a href="#XI-5" data-id="XI-5"><span>XI.5</span>Pivnica rádioamatéra</a><a href="#XI-6" data-id="XI-6"><span>XI.6</span>Plť</a></div><p class="keys" style="margin-top:20px"><kbd>j</kbd> <kbd>k</kbd> obraz<br><kbd>←</kbd> <kbd>→</kbd> dejstvo<br><kbd>g</kbd> skok</p></nav><main><h1 class="dej">XI. DEJSTVO — HRDINOVIA</h1><div class="dej-sub">Pevnina · deň 34 · odkaz</div><details class="reg"><summary>Register · poznámky</summary><p><strong>Register:</strong> presné zrkadlo IX. dejstva. Tie isté miestnosti, ten istý rozhlasový hlas, tie isté noviny — a všetko otočené o stoosemdesiat stupňov. Kde bola škodoradosť, je oslava. Kde bol posmech, je „náš odchovanec&quot;. Dejstvo má byť najprv radostné a postupne čoraz nepríjemnejšie: svet ich objíma z presne tých istých dôvodov, z akých ich pred mesiacom pochovával — lebo je to dobrý príbeh. Jediné dve, ktoré sa nezmenili, sú Hermanová a Astrid.</p><p><strong>Kľúč k dejstvu — jed v oslave:</strong> PROFESOR sa neotočí celkom. Povie, že plavba bola vždy možná a sporná bola téza. Zdá sa to ako maličkosť v mori chvály. Nie je. Je to presne tá veta, ktorou Kapitánovi v závere hry zoberú všetko, po čo šiel. Zaznie tu — v momente najväčšej slávy — a nikto si ju nevšimne. Aj divák ju má prepočuť.</p><p><strong>Pozn. ku kontinuite:</strong> IX. dejstvo — HLÁSATEĽ a PROFESOR, titulky novín na plátne, „Presne toto sme hovorili&quot;, Astridina kresba na chladničke, Nohsled chcel vetu do výročnej správy. IV. dejstvo — Knut: „Pretože niekto vždy počúva.&quot; Tu to dostane naspäť. X. dejstvo — Knut vysiela od rána.</p></details><ul class="osoby"><li><b>HLÁSATEĽ</b> — rozhlasový hlas <em>(mimo scénu)</em></li><li><b>PROFESOR</b> — hlas v rozhlase <em>(mimo scénu)</em></li><li><b>HERMANOVÁ</b></li><li><b>ASTRID</b> — päť rokov</li><li><b>DEKAN</b></li><li><b>NOHSLED</b></li><li><b>ANIKA</b></li><li><b>NOVINÁR 1, NOVINÁR 2</b> — pred domom</li><li><b>RÁDIOAMATÉR</b> — starší muž, vlastná stanica v pivnici</li><li><b>KNUT</b> — na plti</li><li class="nep"><em>(KAPITÁN, HERMAN, ERIK, BENGT, TORSTEIN — na mori)</em></li></ul><section class="obraz" id="XI-1"><h2><span class="oid">XI.1</span>Kuchyňa, ráno</h2><div class="titulok">DEŇ 34. ÉTER SA OZVAL.</div><p class="rez"><em>Hermanova kuchyňa. Ráno. Na kredenci rádio. Na dverách chladničky kresba — slnko, more, loďka s priveľkou plachtou.</em></p><p class="rez"><em>HERMANOVÁ stojí pri linke. Nerobí nič. Len stojí a díva sa na rádio, ako sa človek díva na telefón, ktorý nezvoní.</em></p><p class="rez"><em>Pri stole ASTRID. Kreslí.</em></p><p class="rez"><em>A vtedy rádio zapraská.</em></p><p class="cue"><span class="meno">HLÁSATEĽ</span> <em>(mimo scénu)</em> Mimoriadna správa. Expedícia Kon-Tiki sa dnes nadránom ozvala po prvý raz od búrky. <em>(Beat.)</em> Rádiotelegrafista výpravy odvysielal krátku správu tohto znenia: poloha, dátum — a slová „všetci v poriadku&quot;.</p><p class="rez"><em>HERMANOVÁ sa nepohne. Ruku má na linke. Zovrie ju.</em></p><p class="cue"><span class="meno">HLÁSATEĽ</span> Podľa odvysielanej polohy plť búrku nielenže prežila. <em>(Beat.)</em> Nachádza sa hlbšie v západnom prúde, než kedykoľvek predtým. Kurz je priaznivý už niekoľko dní a expedícia postupuje presne tým smerom, ktorý si vytýčila.</p><p class="rez"><em>ASTRID zdvihne hlavu.</em></p><p class="cue"><span class="meno">HLÁSATEĽ</span> Podľa výpočtov navigátora dosiahne plť polynézske ostrovy približne o šesťdesiatpäť dní. <em>(Beat.)</em> Zopakujem: šesťdesiatpäť dní. Expedícia Kon-Tiki po tridsiatich štyroch dňoch na mori mieri k cieľu.</p><p class="rez"><em>Ticho.</em></p><p class="rez"><em>HERMANOVÁ stojí. Nepovie nič. Nezasmeje sa. Neplače. Len veľmi pomaly pustí linku.</em></p><p class="cue"><span class="meno">ASTRID</span> Teta.</p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(nezmôže sa hneď)</em> …Hm.</p><p class="cue"><span class="meno">ASTRID</span> Povedal „všetci&quot;.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Povedal.</p><p class="cue"><span class="meno">ASTRID</span> <em>(vecne, ako sa hovorí samozrejmosť)</em> Tak ocko je v poriadku.</p><p class="rez"><em>HERMANOVÁ sa otočí. A prvý raz za celú hru jej to trvá — musí sa nadýchnuť, kým to povie.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Ocko je v poriadku.</p><p class="rez"><em>ASTRID prikývne a kreslí ďalej. Je to pre ňu vybavené. Vedela to celý čas.</em></p><p class="rez"><em>HERMANOVÁ podíde k chladničke. Postojí pred tou kresbou. Uhladí roh, ktorý sa krčí — hoci sa nekrčí.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(potichu, k tej kresbe)</em> Šesťdesiatpäť dní. <em>(Beat.)</em> Tak dopečiem neskôr.</p></section><section class="obraz" id="XI-2"><h2><span class="oid">XI.2</span>Kancelária, o hodinu neskôr</h2><p class="rez"><em>Dekanova kancelária. Rádio hrá. Na stole noviny — a je ich viac než minule.</em></p><p class="rez"><em>NOHSLED číta. Je v stave nadšenia, ktoré nemá s včerajškom nič spoločné a vôbec ho to netrápi.</em></p><p class="cue"><span class="meno">NOHSLED</span> <em>(číta)</em> „Prežili búrku!&quot; <em>(iné noviny)</em> „Šesť mužov proti Pacifiku!&quot; <em>(ďalšie)</em> „Muž, ktorý neustúpil&quot;. <em>(Beat.)</em> Pekné, nie? To je celý on.</p><p class="rez"><em>DEKAN zdvihne oči. Pomaly.</em></p><p class="cue"><span class="meno">DEKAN</span> Čo ste povedali?</p><p class="cue"><span class="meno">NOHSLED</span> Že to je celý on.</p><p class="cue"><span class="meno">DEKAN</span> <em>(veľmi ticho)</em> Vy ste ho videli dvakrát v živote. Raz v tejto miestnosti, keď ste na neho kričali, že pravda neexistuje.</p><p class="cue"><span class="meno">NOHSLED</span> <em>(bez zaváhania)</em> Ja som mu vtedy kládol otázky. To je moja práca.</p><p class="rez"><em>Rádio zosilnie. Ten istý hlas ako vždy.</em></p><p class="cue"><span class="meno">HLÁSATEĽ</span> <em>(mimo scénu)</em> K úspechu expedície sa vyjadrila aj akademická obec.</p><p class="rez"><em>NOHSLED sa nakloní k rádiu. DEKAN sa nepohne.</em></p><p class="cue"><span class="meno">PROFESOR</span> <em>(mimo scénu; ten istý pokojný, kultivovaný hlas)</em> Je to obdivuhodný výkon. Naozaj. Šesť mužov, drevo, povraz a tridsaťštyri dní otvoreného mora. Pred takou odvahou treba zložiť klobúk a ja ho skladám.</p><p class="cue"><span class="meno">NOHSLED</span> <em>(šeptom, nadšene)</em> To je ten istý, čo minule —</p><p class="cue"><span class="meno">DEKAN</span> Ticho.</p><p class="cue"><span class="meno">HLÁSATEĽ</span> <em>(mimo scénu)</em> Znamená to teda, že sa veda mýlila?</p><p class="rez"><em>Pauza. A potom to príde — pokojne, vecne, bez zlomyseľnosti. Tak sa to hovorí najlepšie.</em></p><p class="cue"><span class="meno">PROFESOR</span> <em>(mimo scénu)</em> Nie. <em>(Beat.)</em> Musíme si rozumieť. Nikto nikdy netvrdil, že taká plavba je nemožná. Voda tečie na západ, drevo pláva — to vie každý. Veda netvrdila, že sa to nedá. Veda tvrdí, že sa to nestalo. A to je celkom iná otázka.</p><p class="cue"><span class="meno">HLÁSATEĽ</span> Čiže —</p><p class="cue"><span class="meno">PROFESOR</span> Čiže tí páni práve dokazujú, že sú to výborní námorníci. <em>(Beat.)</em> Osídlenie Polynézie prebehlo zo západu. To nezmení ani jedna plť. Ani desať.</p><p class="rez"><em>Rádio prejde do hudby. NOHSLED to prepočul — už zase listuje v novinách.</em></p><p class="rez"><em>DEKAN sedí veľmi ticho.</em></p><p class="cue"><span class="meno">DEKAN</span> <em>(potichu, k nikomu)</em> …To je to najhoršie, čo mu kto mohol spraviť.</p><p class="cue"><span class="meno">NOHSLED</span> <em>(nevníma)</em> Pán Dekan, a teraz to podstatné. <em>(položí pred neho papier)</em> Vyhlásenie univerzity.</p><p class="cue"><span class="meno">DEKAN</span> Aké vyhlásenie?</p><p class="cue"><span class="meno">NOHSLED</span> Nuž — on je predsa náš. Bol u nás profesorom. To je fakt. <em>(číta)</em> „Naša univerzita s hrdosťou sleduje výkon svojho odchovanca —&quot;</p><p class="cue"><span class="meno">DEKAN</span> Von.</p><p class="cue"><span class="meno">NOHSLED</span> Pán Dekan, veď —</p><p class="cue"><span class="meno">DEKAN</span> <em>(vstane)</em> Pred mesiacom ste chceli do výročnej správy vetu, že sme ho zamietli odborne a včas. Mám ju tu. <em>(vytiahne papier zo zásuvky, položí ho na stôl)</em> Nechal som si ju. <em>(Beat.)</em> Tak si vyberte. Ktorá z tých dvoch viet je pravdivá?</p><p class="rez"><em>Ticho.</em></p><p class="cue"><span class="meno">NOHSLED</span> <em>(opatrne)</em> …Obe? V istom zmysle —</p><p class="cue"><span class="meno">DEKAN</span> Áno. Presne tak. Obe. V istom zmysle. <em>(Beat.)</em> A práve preto sa nám všetci smejú.</p><p class="rez"><em>Do dverí vojde ANIKA. Chvíľu stojí. Potom položí na stôl priehradku s poštou.</em></p><p class="cue"><span class="meno">ANIKA</span> <em>(vecne)</em> Volali z troch novín. Chcú vyjadrenie univerzity. <em>(Beat.)</em> A z rozhlasu. Ponúkajú vám priamy vstup.</p><p class="rez"><em>DEKAN sa na ňu pozrie. Dlho.</em></p><p class="cue"><span class="meno">DEKAN</span> Anika. Povedzte im pravdu.</p><p class="cue"><span class="meno">ANIKA</span> Ktorú?</p><p class="cue"><span class="meno">DEKAN</span> <em>(sadne si)</em> Že dekan tejto univerzity ten projekt zamietol. Že si za tým rozhodnutím stojí. Že by ho zamietol aj dnes — lebo peniaze študentov nie sú od toho, aby sa za ne riskovali životy. <em>(Beat.)</em> A že celý mesiac nespí.</p><p class="rez"><em>Ticho.</em></p><p class="cue"><span class="meno">ANIKA</span> <em>(pokojne)</em> To posledné hovoriť nemusím.</p><p class="cue"><span class="meno">DEKAN</span> <em>(nezdvihne oči)</em> Nie. To nemusíte.</p><p class="rez"><em>ANIKA odíde. NOHSLED stojí s vyhlásením v ruke a nevie, čo s ním.</em></p></section><section class="obraz" id="XI-3"><h2><span class="oid">XI.3</span>Chodba pred kanceláriou, v noci</h2><p class="rez"><em>Chodba pred kanceláriou, o mnoho hodín. Tma; svieti len lampa na Anikinom stole. ANIKA sama. Pred ňou zahraničné noviny — anglické, španielske — a slovník. Na stene vedľa jej stola malá mapa Pacifiku. V nej špendlíky: čiara z Callaa na západ. Posledný špendlík trčí uprostred prázdna.</em></p><p class="rez"><em>ANIKA dočíta stĺpec. Vezme nový špendlík. Odmeria prstami vzdialenosť na mape.</em></p><p class="cue"><span class="meno">ANIKA</span> <em>(sebe, sucho)</em> Tridsiaty štvrtý deň. <em>(zapichne špendlík)</em> Ak vydrží prúd, o dva týždne sú za polovicou.</p><p class="rez"><em>Vo dverách DEKAN — po tme, kabát cez ruku, myslel si, že úrad je prázdny. Zastane. ANIKA nezdvihne hlavu; vie, kto to je, podľa kroku.</em></p><p class="cue"><span class="meno">DEKAN</span> Vy čítate po anglicky.</p><p class="cue"><span class="meno">ANIKA</span> Niekto na tomto úrade musí.</p><p class="rez"><em>Ticho. DEKAN podíde. Pozrie na mapu — na tú čiaru špendlíkov, vedenú presnejšie než čokoľvek, čo tento úrad za posledné roky vyprodukoval. Potom na noviny.</em></p><p class="cue"><span class="meno">DEKAN</span> Odkedy?</p><p class="cue"><span class="meno">ANIKA</span> <em>(otočí stránku)</em> Od vyplutia.</p><p class="cue"><span class="meno">DEKAN</span> Prečo?</p><p class="cue"><span class="meno">ANIKA</span> Niekto musí vedieť, kde je.</p><p class="rez"><em>Beat. Ona to počuje až potom.</em></p><p class="cue"><span class="meno">DEKAN</span> <em>(ticho)</em> Kde sú.</p><p class="cue"><span class="meno">ANIKA</span> <em>(nezdvihne hlavu; otočí stránku)</em> Áno. Kde sú.</p><p class="rez"><em>DEKAN chvíľu stojí. Potom si vezme stoličku od vedľajšieho stola. Prisunie si ju k jej lampe. Sadne si. A urobí niečo, čo od neho nečakala: zloží si okuliare a ukáže na noviny.</em></p><p class="cue"><span class="meno">DEKAN</span> Čítajte. <em>(Beat.)</em> Nahlas. Od začiatku.</p><p class="rez"><em>ANIKA sa naňho pozrie — prvý raz za celý večer. Potom pritiahne lampu bližšie, uhladí stránku a číta. Po anglicky — a po každej vete po slovensky. DEKAN počúva so zavretými očami, ako sa počúva správa z frontu, na ktorom má niekoho.</em></p><p class="rez"><em>Svetlo pomaly dole. Jej hlas znie v tme ešte chvíľu — dve reči, jedna loď.</em></p></section><section class="obraz" id="XI-4"><h2><span class="oid">XI.4</span>Pred Hermanovým domom</h2><div class="titulok">A POTOM PRIŠLI ZA ŇOU.</div><p class="rez"><em>Priečelie domu v Larviku. To isté, pred ktorým kedysi stál Torstein s mapami pod pazuchou a skúšal si, čo povie.</em></p><p class="rez"><em>Teraz tu stoja dvaja. NOVINÁR 1 s blokom, NOVINÁR 2 s fotoaparátom. Čakajú. Vidno, že čakajú už dlho a že to považujú za profesionálny výkon.</em></p><p class="rez"><em>Dvere sa otvoria. HERMANOVÁ. Zástera, v ruke utierka. Presne ako vždy.</em></p><p class="cue"><span class="meno">NOVINÁR 1</span> <em>(spustí okamžite)</em> Pani Hermanová! Počuli ste už správy?</p><p class="cue"><span class="meno">HERMANOVÁ</span> Počula.</p><p class="cue"><span class="meno">NOVINÁR 1</span> Ako sa cítite?</p><p class="rez"><em>HERMANOVÁ sa naňho pozrie. Chvíľu. Utrie si ruky.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Dobre. Ďakujem za opýtanie. A vy?</p><p class="cue"><span class="meno">NOVINÁR 1</span> <em>(zaskočene)</em> Ja… dobre.</p><p class="cue"><span class="meno">HERMANOVÁ</span> To ma teší. Pekný deň.</p><p class="rez"><em>Otáča sa dnu.</em></p><p class="cue"><span class="meno">NOVINÁR 2</span> <em>(rýchlo)</em> Váš manžel je hrdina!</p><p class="rez"><em>HERMANOVÁ zastane. Otočí sa. Až teraz.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Môj manžel je stolár. <em>(Beat.)</em> Hrdina bol pred mesiacom tiež. Vtedy ste písali, že zablúdil.</p><p class="cue"><span class="meno">NOVINÁR 1</span> <em>(profesionálne)</em> To písali kolegovia.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Iste. Kolegovia.</p><p class="rez"><em>A vtedy sa vo dverách za ňou objaví ASTRID. Papier v ruke. Zvedavá.</em></p><p class="rez"><em>NOVINÁR 2 ju zbadá. Zdvihne fotoaparát.</em></p><p class="cue"><span class="meno">NOVINÁR 2</span> <em>(nadšene)</em> To je to dieťa? To je dcéra telegrafistu?</p><p class="cue"><span class="meno">NOVINÁR 1</span> <em>(už píše)</em> Malá čaká na otca — to je titulok. To je <em>presne</em> ten titulok.</p><p class="rez"><em>A HERMANOVÁ sa pohne rýchlejšie, než by od nej ktokoľvek čakal. Krok vbok. Postaví sa medzi objektív a dieťa. Nie prudko. Jednoducho tam je.</em></p><p class="rez"><em>Ticho.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(veľmi pokojne)</em> Nie.</p><p class="cue"><span class="meno">NOVINÁR 2</span> Len jedna fotka —</p><p class="cue"><span class="meno">HERMANOVÁ</span> Nie.</p><p class="cue"><span class="meno">NOVINÁR 1</span> Pani Hermanová, ľudia to chcú vidieť. Celá krajina im fandí. To dieťa je —</p><p class="cue"><span class="meno">HERMANOVÁ</span> To dieťa je päťročné a jeho otec je štyritisíc míľ odtiaľto na kope dreva. <em>(Beat.)</em> Ona nie je titulok. Ona je Astrid.</p><p class="rez"><em>Ticho. Novinári zmĺknu — nie preto, že by pochopili. Preto, že nemajú čo povedať.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(k Astrid, celkom iným tónom)</em> Poď dnu, zlatko. Vonku je zima.</p><p class="rez"><em>ASTRID sa nepohne. Pozerá na tých dvoch mužov. Potom na tetu. A položí otázku, akú položí len päťročné dieťa.</em></p><p class="cue"><span class="meno">ASTRID</span> Teta, oni majú rádio?</p><p class="rez"><em>HERMANOVÁ zastane.</em></p><p class="cue"><span class="meno">ASTRID</span> Keď majú rádio, tak počujú ocka. <em>(Beat.)</em> A keď oni počujú jeho, tak on počuje aj mňa, nie?</p><p class="rez"><em>Ticho. HERMANOVÁ sa pomaly skloní k dieťaťu. Novinári prestali existovať.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(veľmi ticho)</em> Zopakuj mi to.</p><p class="cue"><span class="meno">ASTRID</span> Chcem mu niečo povedať.</p><p class="rez"><em>HERMANOVÁ sa vystrie. Chvíľu stojí. A potom sa jej v tvári stane niečo, čo v nej nebolo od Callaa: má prácu.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(vezme dieťa za ruku)</em> Poď. Ideme na návštevu.</p><p class="rez"><em>Otočí sa k novinárom. A po prvý raz sa usmeje — a to je horšie než čokoľvek predtým.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Páni. Bol to nezabudnuteľný rozhovor. <em>(Beat.)</em> Nabudúce zaklopte, keď sa niekomu darí zle. Aspoň budete konzistentní.</p><p class="rez"><em>Zabuchne dvere. Vlastne nie — zavrie ich veľmi ticho, čo je horšie.</em></p></section><section class="obraz" id="XI-5"><h2><span class="oid">XI.5</span>Pivnica rádioamatéra</h2><p class="rez"><em>Malá miestnosť plná prístrojov. Káble, cievky, tri hodiny na stene s rôznymi časmi. Za stolom RÁDIOAMATÉR — starší muž, ktorý sa v živote nikdy nikam neponáhľal.</em></p><p class="rez"><em>Vojde HERMANOVÁ. Za ruku vedie ASTRID.</em></p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> <em>(nezdvihne oči od prístroja)</em> Zatvorené.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Viem. Preto som zaklopala.</p><p class="rez"><em>RÁDIOAMATÉR zdvihne hlavu. Uvidí ju. Potom uvidí dieťa.</em></p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> <em>(iným tónom)</em> Pani Hermanová.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Vy počúvate tú plť.</p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> <em>(vecne)</em> Ja a asi tristo ľudí na svete. <em>(poklope na prístroj)</em> Ten ich telegrafista je najlepší, akého som kedy počul. Ani jedna chyba za tridsaťštyri dní.</p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(položí dlaň Astrid na plece)</em> To je jeho dcéra.</p><p class="rez"><em>Ticho. RÁDIOAMATÉR sa na dieťa pozrie. Potom veľmi opatrne odloží, čo mal v ruke.</em></p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> Aha.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Chce mu niečo povedať. <em>(Beat.)</em> Dá sa to?</p><p class="rez"><em>RÁDIOAMATÉR sa poškriabe za uchom. Pozrie na dieťa.</em></p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> Dá. <em>(Beat.)</em> Len s tým je jeden problém, slečna. Ja neviem posielať slová. Ja viem posielať len ťuk-ťuk. <em>(ukáže kľúč)</em> Body a čiarky. Tak sa tam ten odkaz musí premeniť.</p><p class="cue"><span class="meno">ASTRID</span> <em>(vecne)</em> A ocko tomu rozumie?</p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> <em>(úprimne)</em> Slečna, tvoj ocko tomu rozumie lepšie ako ja.</p><p class="rez"><em>ASTRID prikývne. Toto je pre ňu vyriešené.</em></p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> <em>(vezme ceruzku, pripraví si papier; celkom iným, úradným tónom)</em> Tak. Diktuj. <em>(Beat.)</em> Ale krátko. Každé písmeno musím vyťukať zvlášť, a keď to bude dlhé, prehluší nás Austrália.</p><p class="rez"><em>ASTRID sa zamyslí. Naozaj sa zamyslí — vidno, že si to premýšľala celú cestu.</em></p><p class="rez"><em>Potom položí na stôl svoju kresbu. Slnko. More. Loďka s priveľkou plachtou.</em></p><p class="cue"><span class="meno">ASTRID</span> Napíšte: Astrid.</p><p class="rez"><em>RÁDIOAMATÉR píše.</em></p><p class="cue"><span class="meno">ASTRID</span> Nakreslila som ti plachtu.</p><p class="rez"><em>Píše.</em></p><p class="cue"><span class="meno">ASTRID</span> Je veľká.</p><p class="rez"><em>Píše. Čaká. ASTRID mlčí.</em></p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> <em>(jemne)</em> A ešte niečo?</p><p class="rez"><em>ASTRID pozrie na tetu. HERMANOVÁ neprikývne ani nepokrúti hlavou. Nechá to na ňu.</em></p><p class="cue"><span class="meno">ASTRID</span> <em>(k prístroju, nie k mužovi)</em> Veľká plachta ide rýchlejšie domov.</p><p class="rez"><em>Ticho. RÁDIOAMATÉR napíše poslednú vetu. Pozrie na papier. Nič nepovie — a chvíľu mu trvá, kým sa pohne.</em></p><p class="cue"><span class="meno">RÁDIOAMATÉR</span> <em>(odkašle si)</em> Dobre. <em>(nasadí si slúchadlá)</em> Tak si sadni, slečna. A drž mi palce, lebo ich musím najprv nájsť.</p><p class="rez"><em>Sadne si ku kľúču. Chvíľu ladí. Praskanie éteru naplní miestnosť.</em></p><p class="rez"><em>A potom začne ťukať. Krátke, presné zvuky. Body a čiarky.</em></p><p class="rez"><em>ASTRID sedí na stoličke, nohy jej nedosiahnu na zem, a díva sa na jeho ruku.</em></p><p class="rez"><em>HERMANOVÁ stojí za ňou. Ruku má na operadle. A tam, v tej pivnici, kde ju nikto nevidí — nikto okrem nás — zavrie oči.</em></p></section><section class="obraz" id="XI-6"><h2><span class="oid">XI.6</span>Plť</h2><p class="rez"><em>Plť. Noc. Hliadka. ERIK so sextantom. KNUT pri rádiu, slúchadlá na ušiach, ruka na kľúči.</em></p><p class="rez"><em>Praskanie. KNUT znehybnie. Nakloní hlavu.</em></p><p class="rez"><em>Chytí ceruzku. Začne písať — písmeno po písmene, ako to robieva. Ruka mu ide automaticky; on sám sa díva do tmy.</em></p><p class="rez"><em>Prvé slovo napíše bez záujmu. Pri druhom sa mu ruka spomalí.</em></p><p class="rez"><em>Potom zastane úplne.</em></p><p class="cue"><span class="meno">ERIK</span> <em>(nezdvihne oči od sextantu)</em> Kto to je?</p><p class="rez"><em>KNUT neodpovie.</em></p><p class="cue"><span class="meno">ERIK</span> Knut?</p><p class="rez"><em>KNUT si veľmi pomaly zloží slúchadlá. Drží ich v ruke. Díva sa na papier pred sebou.</em></p><p class="rez"><em>Číta ho ešte raz. A potom ešte raz.</em></p><p class="cue"><span class="meno">KNUT</span> <em>(sotva počuteľne)</em> …Astrid.</p><p class="rez"><em>ERIK sa otočí.</em></p><p class="rez"><em>KNUT nezdvihne hlavu. Sedí a číta tie tri riadky. Nikto na tej plti sa nepohne.</em></p><p class="rez"><em>A potom — nie nahlas, skôr aby to počul on sám — prečíta to nahlas.</em></p><p class="cue"><span class="meno">KNUT</span> „Astrid. Nakreslila som ti plachtu. Je veľká.&quot; <em>(Beat.)</em> „Veľká plachta ide rýchlejšie domov.&quot;</p><p class="rez"><em>Ticho. Iba more.</em></p><p class="rez"><em>ERIK odloží sextant. Prvý raz za celú plavbu ho odloží bez toho, aby dokončil meranie. Nepovie nič. Sadne si vedľa Knuta — nie blízko. Len vedľa.</em></p><p class="rez"><em>KNUT preloží papier. Raz. Druhý raz. Vloží ho do náprsného vrecka — k srdcu, tam, kde má fotku.</em></p><p class="rez"><em>Potom si nasadí slúchadlá späť. Položí ruku na kľúč.</em></p><p class="rez"><em>A vyťuká odpoveď — krátku. Tri slová. My ich nepočujeme; počuje ich len éter a jedno dievčatko o pol sveta ďalej.</em></p><p class="rez"><em>Za jeho chrbtom, vo dverách búdky, stojí KAPITÁN. Videl to celé. Nevojde. Nepovie nič.</em></p><p class="rez"><em>Otočí sa a odíde spať.</em></p><div class="titulok">VŽDY NIEKTO POČÚVA.</div><div class="tit-lead">Menší titulok pod ním</div><div class="titulok">POVEDAL TO PRED ROKOM. VTEDY EŠTE NEVEDEL, ŽE TO PLATÍ AJ OPAČNE.</div><p class="rez"><em>Svetlo dole.</em></p><p class="koniec">— koniec XI. dejstva —</p></section><div class="pager"><a href="../dejstvo/X.html">← X. dejstvo</a><a href="../dejstvo/XII.html">XII. dejstvo →</a></div></main></div><div id="lb"><img alt=""></div><script>
+(function(){
+  var R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI'];
+  var jump=document.getElementById('jump');
+  function go(v){
+    v=v.trim().toUpperCase().replace(/[\s,]+/g,'.');
+    var m=v.match(/^([IVX]+|\d+)(?:[.\-·]?(\d+|M))?$/); if(!m) return false;
+    var r=m[1]; if(/^\d+$/.test(r)) r=R[parseInt(r,10)-1]; if(R.indexOf(r)<0) return false;
+    var b=document.body, root=b.getAttribute('data-root')||'/', ext=b.getAttribute('data-ext')||'';
+    location.href=root+'dejstvo/'+r+ext+(m[2]?'#'+r+'-'+m[2]:''); return true;
+  }
+  if(jump) jump.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){ if(!go(jump.value)) jump.style.outline='2px solid #e9a'; }
+    if(e.key==='Escape') jump.blur();
+  });
+  var lb=document.getElementById('lb'), lbi=lb&&lb.querySelector('img');
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.classList&&t.classList.contains('zoom')){ e.preventDefault(); lbi.src=t.src; lb.classList.add('on'); }
+    else if(lb&&lb.classList.contains('on')) lb.classList.remove('on');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.target.matches('input,textarea')||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key==='Escape'&&lb) lb.classList.remove('on');
+    if(e.key==='g'||e.key==='/'){ if(jump){ e.preventDefault(); jump.focus(); jump.select(); } }
+  });
+})();
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('section.obraz'));
+  var cards={}, links={};
+  [].forEach.call(document.querySelectorAll('.karta'),function(c){cards[c.getAttribute('data-for')]=c;});
+  [].forEach.call(document.querySelectorAll('.onav a[data-id]'),function(a){links[a.getAttribute('data-id')]=a;});
+  var nav=document.querySelector('.act>nav'), fab=document.querySelector('.fab');
+  var body=document.body, cur=null, user=false;
+  var prev=body.getAttribute('data-prev'), next=body.getAttribute('data-next');
+  function activate(id){
+    if(!id||id===cur||!(cards[id]||links[id])) return; cur=id;
+    for(var k in cards) cards[k].hidden=(k!==id);
+    for(var k2 in links) links[k2].classList.toggle('on',k2===id);
+    if(fab&&cards[id]) fab.textContent='Scéna '+cards[id].querySelector('.oid').textContent;
+    var a=links[id];
+    if(a&&nav&&nav.offsetParent){ var top=a.offsetTop-nav.offsetTop;
+      if(top<nav.scrollTop+40||top>nav.scrollTop+nav.clientHeight-60) nav.scrollTop=top-nav.clientHeight/2; }
+    if(user) history.replaceState(null,'','#'+id);
+  }
+  function spy(){
+    var y=window.innerHeight*0.3, best=secs[0];
+    for(var i=0;i<secs.length;i++){ if(secs[i].getBoundingClientRect().top<=y) best=secs[i]; else break; }
+    if(best) activate(best.id);
+  }
+  var tick=false;
+  window.addEventListener('scroll',function(){ user=true; if(!tick){ tick=true; requestAnimationFrame(function(){ tick=false; spy(); }); } },{passive:true});
+  var h=location.hash.slice(1);
+  if(h&&cards[h]) activate(h); else spy();
+  function goSec(d){
+    var i=-1; for(var k=0;k<secs.length;k++) if(secs[k].id===cur) i=k;
+    var s=secs[Math.max(0,Math.min(secs.length-1,i+d))];
+    if(s){ s.scrollIntoView({behavior:'smooth'}); history.replaceState(null,'','#'+s.id); activate(s.id); }
+  }
+  if(fab) fab.addEventListener('click',function(e){ e.stopPropagation(); body.classList.toggle('panel'); });
+  document.addEventListener('keydown',function(e){
+    if(e.target.matches('input,textarea')||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key==='j'||e.key==='n') goSec(1);
+    else if(e.key==='k'||e.key==='p') goSec(-1);
+    else if(e.key==='ArrowRight'&&next) location.href=next;
+    else if(e.key==='ArrowLeft'&&prev) location.href=prev;
+    else if(e.key==='s') body.classList.toggle('panel');
+  });
+})();</script></body></html>

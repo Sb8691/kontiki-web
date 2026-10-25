@@ -1,0 +1,203 @@
+<!doctype html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>III. dejstvo · Kon-Tiki</title><style>
+:root{--sea:#1F4E5F;--sealt:#2E6E84;--gray:#5A5A5A;--note:#F3EFE7;--brass:#B08D57;--tit:#EAEFF1;--paper:#fbfaf7;--side:#f3f0e9;--ink:#1d1d1b;--line:#e2ddd2;--hdr:48px;--ui:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(var(--hdr) + 14px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 Georgia,"Times New Roman",serif}
+a{color:var(--sealt)}
+code{font:.85em ui-monospace,Menlo,monospace;background:#efece4;padding:0 .25em;border-radius:3px}
+header.top{position:sticky;top:0;z-index:40;height:var(--hdr);display:flex;align-items:center;gap:20px;padding:0 18px;background:var(--sea);color:#fff;font:14px/1 var(--ui)}
+header.top a{color:#cfe0e6;text-decoration:none}
+header.top a:hover,header.top a.on{color:#fff}
+header.top .brand{font-weight:700;letter-spacing:.16em;color:#fff}
+header.top .sp{flex:1}
+header.top input{width:9.5em;padding:6px 9px;border-radius:5px;border:0;background:#2b6276;color:#fff;font:13px var(--ui)}
+header.top input::placeholder{color:#a9c4cd}
+header.top .ver{font-size:12px;color:#a9c4cd}
+.keys{font:12px var(--ui);color:#8a857a}
+.keys kbd{font:11px var(--ui);border:1px solid #cfc9bc;border-bottom-width:2px;border-radius:3px;padding:0 4px;background:#fff;color:#444}
+/* dejstvo */
+.act{display:grid;grid-template-columns:210px minmax(0,1fr) 470px}
+.act>nav,.act>aside{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));overflow:auto}
+.act>nav{border-right:1px solid var(--line);padding:16px 12px 40px;font:13px/1.35 var(--ui)}
+.act>main{padding:30px 52px 140px;max-width:840px;width:100%;justify-self:center}
+.act>aside{border-left:1px solid var(--line);background:var(--side);padding:16px 18px 60px;font:14px/1.45 var(--ui)}
+.act.bez{grid-template-columns:210px minmax(0,1fr)}.act.bez>nav{display:block}
+@media (max-width:900px){.act.bez{grid-template-columns:1fr}.act.bez>nav{display:none}}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:16px}
+.rgrid a{display:block;text-align:center;padding:5px 0;border-radius:4px;text-decoration:none;color:var(--sea);background:#efece4;font-weight:600;font-size:12px}
+.rgrid a.on{background:var(--sea);color:#fff}
+.rgrid a:hover{background:#e2ddd2}.rgrid a.on:hover{background:var(--sea)}
+.onav a{display:flex;gap:6px;padding:5px 6px;border-radius:4px;text-decoration:none;color:#333}
+.onav a span{color:var(--brass);font-weight:700;min-width:3.4em}
+.onav a.on{background:#e6e1d6}
+.onav .hasp{margin-left:auto;color:var(--sealt);font-size:11px}
+.navh{font:600 11px var(--ui);letter-spacing:.12em;color:#8a857a;text-transform:uppercase;margin:14px 0 6px}
+h1.dej{font:700 30px/1.15 var(--ui);color:var(--sea);letter-spacing:.05em;margin:0}
+.dej-sub{font-style:italic;color:var(--gray);margin:.35em 0 1.3em}
+details.reg{background:var(--note);border-left:4px solid var(--brass);padding:.5em 1em;margin:0 0 1.2em;font-size:.9em;color:#4a4438}
+details.reg summary{cursor:pointer;font:600 12px var(--ui);letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
+details.reg p{margin:.6em 0}
+.osoby{font:14px/1.5 var(--ui);margin:0 0 1em;padding:0;list-style:none;columns:2;column-gap:2em}
+.osoby li{break-inside:avoid;margin-bottom:.2em}
+.osoby b{color:var(--sea)}
+.osoby .nep{color:var(--gray)}
+section.obraz{border-top:1px solid var(--line);margin-top:40px;padding-top:6px}
+section.obraz h2{font:700 15px/1.3 var(--ui);color:var(--sealt);letter-spacing:.08em;text-transform:uppercase;margin:.8em 0 1em}
+.oid{color:var(--brass);font-weight:700;margin-right:.35em}
+p.cue{margin:.2em 0 .7em;padding-left:1.5em;text-indent:-1.5em}
+.meno{font:700 13px var(--ui);color:var(--sea);letter-spacing:.05em;margin-right:.3em}
+p.rez{color:var(--gray);font-size:.93em;margin:.5em 0 .85em 1.5em}
+.titulok{margin:1.2em auto;padding:.75em 1em;text-align:center;background:var(--tit);border-top:2px solid var(--sealt);border-bottom:2px solid var(--sealt);font:700 13.5px/1.45 var(--ui);letter-spacing:.14em;color:var(--sea)}
+.tit-lead{text-align:center;font-style:italic;color:var(--gray);font-size:.82em;margin:1.2em 0 -.6em}
+.note{background:var(--note);border-left:4px solid var(--brass);padding:.2em 1em;font-size:.9em;color:#4a4438;margin:1em 0}
+.divider{text-align:center;color:var(--sealt);letter-spacing:.6em;margin:1.6em 0}
+.koniec{text-align:center;font-style:italic;color:var(--gray);margin-top:3em}
+.pager{display:flex;justify-content:space-between;margin-top:60px;font:14px var(--ui)}
+.pager a{text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:6px;background:#fff}
+/* karta scény */
+.karta .k-head{font:700 15px/1.3 var(--ui);color:var(--ink);margin:0 0 10px}
+.karta dl{margin:0 0 12px}
+.karta dt{font:600 10.5px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#8a857a;margin-top:8px}
+.karta dd{margin:2px 0 0}
+.karta dd.prvky{color:var(--sea);font-weight:600}
+.k-sec{font:600 10.5px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:#8a857a;margin:16px 0 6px;border-top:1px solid var(--line);padding-top:12px}
+.karta figure{margin:0}
+.karta img{width:100%;display:block;border:1px solid var(--line);border-radius:4px;background:#fff;cursor:zoom-in}
+.karta figcaption{font-size:12px;color:var(--gray);margin-top:5px}
+.k-tit{font:700 11px/1.4 var(--ui);letter-spacing:.12em;color:var(--sea);background:var(--tit);padding:6px 8px;margin-top:10px;text-align:center}
+.pozn{padding-left:1.1em;margin:10px 0 0;color:#444;font-size:13px}
+.pozn li{margin-bottom:6px}
+.miss{color:#9a9488;font-style:italic;margin:4px 0}
+.fab{display:none}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(10,12,14,.88);display:none;align-items:center;justify-content:center;z-index:100;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:94vh;background:#fff;border-radius:4px}
+/* úvod */
+.wrap{max-width:1180px;margin:0 auto;padding:30px 28px 100px}
+.hero{display:flex;gap:36px;align-items:center;margin:10px 0 34px}
+.hero img{width:230px;height:230px;object-fit:cover;border-radius:6px}
+.hero .eyebrow{font:600 12px var(--ui);letter-spacing:.2em;color:var(--gray)}
+.hero h1{font:800 54px/1 var(--ui);letter-spacing:.08em;color:var(--sea);margin:.15em 0 .2em}
+.hero .q{font-style:italic;color:var(--sea);font-size:20px;margin:.6em 0}
+.hero .meta{font:13px var(--ui);color:var(--gray)}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;font:14px var(--ui)}
+.links a{padding:8px 13px;border-radius:6px;background:#fff;border:1px solid var(--line);text-decoration:none}
+.parth{font:600 12px var(--ui);letter-spacing:.16em;text-transform:uppercase;color:#8a857a;margin:28px 0 10px}
+.acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.ac{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font:13px/1.4 var(--ui)}
+.ac>a{text-decoration:none;color:var(--ink);display:block}
+.ac .r{font:800 22px var(--ui);color:var(--sea)}
+.ac .n{font-weight:700;font-size:15px;margin-left:6px}
+.ac .s{display:block;color:var(--gray);font-style:italic;margin:2px 0 8px}
+.ac ol{margin:0;padding:0;list-style:none}
+.ac li a{display:flex;gap:6px;text-decoration:none;color:#333;padding:1px 0}
+.ac li a span{color:var(--brass);font-weight:700;min-width:3.4em}
+.ac li a:hover{color:var(--sealt)}
+.ac .b{float:right;font-size:11px;color:var(--sealt);background:var(--tit);padding:2px 6px;border-radius:9px}
+.prest{grid-column:1/-1;text-align:center;font:600 12px var(--ui);letter-spacing:.2em;color:var(--brass);padding:10px;border-top:1px dashed var(--brass);border-bottom:1px dashed var(--brass)}
+/* galéria scény */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-bottom:10px}
+.g{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;text-decoration:none;color:var(--ink);font:12px/1.35 var(--ui);display:flex;flex-direction:column}
+.g img{width:100%;aspect-ratio:860/820;object-fit:cover;display:block;border-bottom:1px solid var(--line)}
+.g .ph{aspect-ratio:860/820;display:flex;align-items:center;justify-content:center;background:#f4f1ea;color:#9a9488;font-style:italic;padding:12px;text-align:center;border-bottom:1px solid var(--line)}
+.g .t{padding:7px 9px}
+.g .t b{color:var(--brass)}
+.g .t i{display:block;color:var(--gray);margin-top:2px}
+.g:hover{border-color:var(--sealt)}
+h2.gh{font:700 16px var(--ui);color:var(--sea);margin:30px 0 10px}
+h2.gh a{text-decoration:none}
+/* dokumenty */
+.doc{display:grid;grid-template-columns:220px minmax(0,1fr)}
+.doc>nav{position:sticky;top:var(--hdr);height:calc(100vh - var(--hdr));overflow:auto;border-right:1px solid var(--line);padding:18px 12px;font:13px/1.4 var(--ui)}
+.doc>nav a{display:block;padding:4px 6px;border-radius:4px;text-decoration:none;color:#333}
+.doc>nav a.on{background:#e6e1d6}
+.doc>main{padding:24px 48px 120px;max-width:1100px}
+.doc h1,.doc h2,.doc h3{font-family:var(--ui);color:var(--sea)}
+.doc h1{font-size:28px}.doc h2{font-size:20px;margin-top:1.6em}.doc h3{font-size:16px}
+.doc main img{max-width:100%}
+.tbl{overflow-x:auto;margin:1em 0}
+.doc table{border-collapse:collapse;font:13px/1.4 var(--ui);background:#fff}
+.doc th,.doc td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+.doc th{background:#f1eee6}
+.doc blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--brass);background:var(--note)}
+.doc pre{background:#f1eee6;padding:12px;overflow:auto;font-size:13px}
+.doc pre.mermaid{background:#fff;text-align:center}
+@media (max-width:1280px){.act{grid-template-columns:minmax(0,1fr) 420px}.act>nav{display:none}}
+@media (max-width:900px){
+ .act{grid-template-columns:1fr}.act>main{padding:20px 18px 120px}
+ .act>aside{position:fixed;left:0;right:0;bottom:0;top:auto;height:70vh;z-index:50;transform:translateY(102%);transition:transform .2s;box-shadow:0 -6px 24px rgba(0,0,0,.2)}
+ body.panel .act>aside{transform:none}
+ .fab{display:block;position:fixed;right:14px;bottom:14px;z-index:60;border:0;border-radius:22px;padding:10px 16px;background:var(--sea);color:#fff;font:600 13px var(--ui);box-shadow:0 3px 10px rgba(0,0,0,.25)}
+ .doc{grid-template-columns:1fr}.doc>nav{display:none}.doc>main{padding:20px 18px}
+ .hero{flex-direction:column;align-items:flex-start}
+ header.top .ver,header.top .hide-s{display:none}
+}</style></head><body data-root="../" data-ext=".html" data-prev="../dejstvo/II.html" data-next="../dejstvo/IV.html"><header class="top"><a class="brand" href="../">KON-TIKI</a><a href="../">Dejstvá</a><span class="sp"></span><input id="jump" placeholder="skok: VIII.5  (g)" autocomplete="off"><span class="ver">verzia 2 · kolo 12 · október 2026</span></header><div class="act bez"><nav><div class="navh">Dejstvá</div><div class="rgrid"><a href="../dejstvo/I.html">I</a><a href="../dejstvo/II.html">II</a><a href="../dejstvo/III.html" class="on">III</a><a href="../dejstvo/IV.html">IV</a><a href="../dejstvo/V.html">V</a><a href="../dejstvo/VI.html">VI</a><a href="../dejstvo/VII.html">VII</a><a href="../dejstvo/VIII.html">VIII</a><a href="../dejstvo/IX.html">IX</a><a href="../dejstvo/X.html">X</a><a href="../dejstvo/XI.html">XI</a><a href="../dejstvo/XII.html">XII</a><a href="../dejstvo/XIII.html">XIII</a><a href="../dejstvo/XIV.html">XIV</a><a href="../dejstvo/XV.html">XV</a><a href="../dejstvo/XVI.html">XVI</a></div><div class="navh">Obrazy</div><div class="onav"><a href="#III-1" data-id="III-1"><span>III.1</span>Dve dvere</a><a href="#III-2" data-id="III-2"><span>III.2</span>Či to drevo dopláva</a><a href="#III-3" data-id="III-3"><span>III.3</span>Že ide Herman</a><a href="#III-4" data-id="III-4"><span>III.4</span>Telefón</a></div><p class="keys" style="margin-top:20px"><kbd>j</kbd> <kbd>k</kbd> obraz<br><kbd>←</kbd> <kbd>→</kbd> dejstvo<br><kbd>g</kbd> skok</p></nav><main><h1 class="dej">III. DEJSTVO — ERIK A BENGT</h1><div class="dej-sub">Dvoje dverí oproti sebe</div><details class="reg"><summary>Register · poznámky</summary><p><strong>Účel scény:</strong> dotvoriť Kapitána, nie posúvať dej. Erik a Bengt sú komická dvojica, ktorá sa veľmi má rada a nikdy to neukáže. Hádajú sa o konkrétnych, uchopiteľných veciach — uzly, voda v dreve, ťažisko plachty, prúdy, ostrovy — nie o filozofii. Rozdiel medzi nimi (jeden verí, že čo sa dá spočítať, to platí; druhý verí, že more je vždy väčšie než výpočet) presvitá len v tóne a v jednom slove: Bengtovo „možno&quot; proti Erikovmu „nie možno&quot;. Nikdy sa to nepomenuje.</p><p><strong>Zlom:</strong> keď zaznie, že ide Herman, prestanú hľadať dôvody, prečo to nejde, a začnú hľadať dôvody, prečo to drží — a po prvý raz sa zhodnú. Kapitán hovorí málo a ťažko; ten kontrast hrá za neho.</p></details><ul class="osoby"><li><b>ERIK</b> — navigátor. Počty, poriadok, pero za uchom.</li><li><b>BENGT</b> — čitateľ. Knihy všade; poriadok, ktorému rozumie len on.</li><li><b>KAPITÁN</b></li><li><b>PAPOUŠEK</b> — zelený papagáj <em>(s Kapitánom)</em></li><li><b><em>Scéna: chodba, dvoje dverí oproti sebe. ERIKOVE</em></b> — všetko na nich rovno. BENGTOVE — nakrivo, polepené papierikmi, jeden visí.<em></em></li></ul><section class="obraz" id="III-1"><h2><span class="oid">III.1</span>Dve dvere</h2><p class="rez"><em>KAPITÁN vojde s klietkou; v nej PAPOUŠEK. Pozrie z jedných dverí na druhé. Postaví klietku. Zaklope na Bengtove dvere.</em></p><p class="rez"><em>Skôr než ktokoľvek otvorí, ozve sa hlas spoza DRUHÝCH — Erikových, zatvorených.</em></p><p class="cue"><span class="meno">ERIK</span> <em>(zvnútra)</em> Každý vie, že Bengt spí, keď má pracovať.</p><p class="cue"><span class="meno">BENGT</span> <em>(zvnútra, druhé dvere)</em> Každý vie, že Erik počúva pri dverách, keď má myslieť.</p><p class="cue"><span class="meno">ERIK</span> <em>(zvnútra)</em> Počúvam, lebo si nahlas.</p><p class="cue"><span class="meno">BENGT</span> <em>(zvnútra)</em> Myslím nahlas. To je rozdiel.</p><p class="rez"><em>Bengtove dvere sa otvoria. BENGT — okuliare, kniha v ruke, vlasy rozčesané pozornosťou venovanou iným veciam.</em></p><p class="cue"><span class="meno">BENGT</span> Nespal som. Čítal som.</p><p class="rez"><em>Erikove dvere sa otvoria. ERIK — pero za uchom, všetko na ňom rovno.</em></p><p class="cue"><span class="meno">ERIK</span> To je to isté.</p><p class="cue"><span class="meno">BENGT</span> To rozhodne nie je to isté.</p><p class="cue"><span class="meno">ERIK</span> Pre výsledok —</p><p class="cue"><span class="meno">BENGT</span> Neopováž sa.</p><p class="rez"><em>Obaja si naraz všimnú KAPITÁNA. Stíchnu. Pozrú naňho. Potom na seba. Potom znova naňho.</em></p><p class="cue"><span class="meno">ERIK</span> Vy ste —</p><p class="cue"><span class="meno">BENGT</span> — ten s plťou.</p><p class="cue"><span class="meno">KAPITÁN</span> Posiela ma Herman.</p><p class="rez"><em>Meno zaberie u oboch.</em></p><p class="cue"><span class="meno">ERIK</span> <em>(Bengtovi)</em> Vravel som ti, že príde.</p><p class="cue"><span class="meno">BENGT</span> Nevravel.</p><p class="cue"><span class="meno">ERIK</span> Myslel som to.</p><p class="cue"><span class="meno">BENGT</span> To je to isté?</p><p class="cue"><span class="meno">ERIK</span> <em>(bez mihnutia)</em> Pre výsledok áno.</p><p class="rez"><em>BENGT otvorí dvere dokorán.</em></p><p class="cue"><span class="meno">BENGT</span> Poďte ďalej. Mám kávu.</p><p class="cue"><span class="meno">ERIK</span> Aj ja mám kávu.</p><p class="cue"><span class="meno">BENGT</span> Tvoja je studená.</p><p class="cue"><span class="meno">ERIK</span> Má rovnakú teplotu ako pred hodinou.</p><p class="cue"><span class="meno">BENGT</span> Práve preto.</p></section><section class="obraz" id="III-2"><h2><span class="oid">III.2</span>Či to drevo dopláva</h2><p class="rez"><em>Bengtova kancelária. Knihy všade — na stoloch, na zemi, na parapete. Chaos, ktorý má systém, len nie taký, čo by pochopil niekto iný. KAPITÁN vojde. ERIK za ním; pri dverách bez pozretia narovná stoh kníh, ktorý sa chystal spadnúť, a hneď sa tvári, že to nespravil.</em></p><p class="rez"><em>KAPITÁN položí na voľný roh stola jeden list — výkres plte. Obaja sa naň pozrú, akoby naň zabudli, že ho nechcú vidieť.</em></p><p class="rez"><em>KAPITÁN si sadne na jediné voľné miesto v miestnosti — stoh kníh.</em></p><p class="cue"><span class="meno">ERIK A BENGT</span> <em>(naraz)</em> Nie —</p><p class="rez"><em>Neskoro. Nič sa nestane. Stoh drží. KAPITÁN ostane sedieť; oni to po chvíli vzdajú.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Chcem postaviť plť z balzy a preplaviť sa cez Pacifik. Dokázať, že to ide z východu na západ.</p><p class="rez"><em>Ticho. Potom obaja naraz — z opačných koncov sveta:</em></p><p class="cue"><span class="meno">ERIK</span> Pôjde to.</p><p class="cue"><span class="meno">BENGT</span> Možno to pôjde.</p><p class="rez"><em>Otočia sa proti sebe.</em></p><p class="cue"><span class="meno">ERIK</span> Nie „možno&quot;. Prúdy idú od marca do júna na západ. Štyritisíc päťsto míľ. Pri dvoch uzloch si tam za sto dní.</p><p class="cue"><span class="meno">BENGT</span> „Pri dvoch uzloch.&quot; Oceán nemá priemer, Erik. Má dni, keď stojíš na mieste, a noci, keď ťa nesie bokom.</p><p class="cue"><span class="meno">ERIK</span> Priemer je to, čo zostane, keď tie dni a noci spočítaš.</p><p class="cue"><span class="meno">BENGT</span> Priemer je to, čím sa utešuje človek, ktorý ešte nebol na vode.</p><p class="cue"><span class="meno">ERIK</span> A ty si bol? Na vode?</p><p class="cue"><span class="meno">BENGT</span> <em>(beat)</em> Trajekt do Dánska.</p><p class="cue"><span class="meno">ERIK</span> To sa neráta.</p><p class="cue"><span class="meno">BENGT</span> Dve hodiny som sa držal zábradlia. Ráta sa.</p><p class="rez"><em>ERIK vezme zo stola hrnček — Bengtov, plný — a napije sa, len aby niečo robil.</em></p><p class="cue"><span class="meno">BENGT</span> To je moja káva.</p><p class="cue"><span class="meno">ERIK</span> Je teplá. Preto.</p><p class="cue"><span class="meno">BENGT</span> A drevo? Balza je špongia — nasaje more a klesne aj s tvojím priemerom.</p><p class="cue"><span class="meno">ERIK</span> Suchá balza pije pomaly.</p><p class="cue"><span class="meno">BENGT</span> Koľko je pomaly? Máš číslo, alebo len nádej?</p><p class="cue"><span class="meno">ERIK</span> Mám číslo.</p><p class="cue"><span class="meno">BENGT</span> Ukáž.</p><p class="cue"><span class="meno">ERIK</span> <em>(beat)</em> …Doma.</p><p class="cue"><span class="meno">BENGT</span> Aha.</p><p class="cue"><span class="meno">PAPOUŠEK</span> Blbec.</p><p class="rez"><em>Obaja, bez zaváhania, ukážu na toho druhého:</em></p><p class="cue"><span class="meno">ERIK A BENGT</span> <em>(naraz)</em> Jeho.</p><p class="rez"><em>Krátko sa pozrú na seba. Skoro úsmev. Hneď ho potlačia.</em></p><p class="cue"><span class="meno">ERIK</span> Väčší problém je plachta. Ak bude ťažisko zle, plť sa stočí bokom a nalomí sa na prvej veľkej vlne.</p><p class="cue"><span class="meno">BENGT</span> Konečne niečo, na čom sa zhodneme. Ťažisko je zlé.</p><p class="cue"><span class="meno">ERIK</span> Ešte sme plť nepostavili.</p><p class="cue"><span class="meno">BENGT</span> Preto je ideálny čas povedať, že je zlé.</p><p class="cue"><span class="meno">ERIK</span> A povrazy. Žiadne klince, žiadna oceľ. V tej hojdačke ti laná prepília kmene za týždeň —</p><p class="cue"><span class="meno">BENGT</span> — ak sa viažu nakrátko. Ak sa viažu s priestorom, držia. <em>(Beat. Pozrie na Erika.)</em> To som povedal ja, nie ty. Zapamätaj si to.</p><p class="rez"><em>KAPITÁN podíde k oknu. Nechá ich. Sleduje výkres.</em></p></section><section class="obraz" id="III-3"><h2><span class="oid">III.3</span>Že ide Herman</h2><p class="rez"><em>BENGT sa zrazu otočí ku Kapitánovi. Tón sa zmení — pod hádkou je zrazu starosť.</em></p><p class="cue"><span class="meno">BENGT</span> A viete, že môžete zomrieť. Štyri mesiace, otvorené more, nikto vás odtiaľ nevytiahne.</p><p class="cue"><span class="meno">ERIK</span> <em>(nezosmiešni ho — pripojí sa)</em> Ak bude plachta zle, nevrátite sa. To nie je strašenie. To je ťažisko.</p><p class="rez"><em>Prvýkrát stoja vedľa seba. Obaja sa pozrú na KAPITÁNA — čakajú, či cúvne.</em></p><p class="rez"><em>KAPITÁN necúvne.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Vy sa hádate, či to ide — alebo či to možno ide. <em>(Beat.)</em> Mňa to nezaujíma. Ja neviem, či to ide. Viem, že to spravím.</p><p class="rez"><em>Ticho.</em></p><p class="cue"><span class="meno">KAPITÁN</span> To nie sú tvoje čísla, Erik. A nie je to ani jedno z tvojich „možno&quot;, Bengt. Je to vôľa. To tretie, čo vám obom chýba.</p><p class="rez"><em>Zásah. Ale sú to vedci.</em></p><p class="cue"><span class="meno">BENGT</span> <em>(ticho)</em> Vôľa nedrží drevo nad vodou.</p><p class="cue"><span class="meno">ERIK</span> <em>(ticho)</em> A nezaviaže ani jeden uzol.</p><p class="rez"><em>KAPITÁN sa otočí od okna.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Tie uzly viaže Herman. Ide s nami.</p><p class="rez"><em>Ticho. Iné ticho než predtým.</em></p><p class="cue"><span class="meno">ERIK</span> <em>(potichu)</em> Herman ide.</p><p class="cue"><span class="meno">BENGT</span> Herman, ktorý raz tri dni nejedol, lebo si nechcel priznať, že sa zmýlil v jednom uzle.</p><p class="rez"><em>ERIK prikývne. Pozná tú historku. Bol pri tom.</em></p><p class="rez"><em>A teraz — po prvý raz — prestávajú hľadať, prečo to klesne. Začínajú hľadať, prečo to drží.</em></p><p class="cue"><span class="meno">BENGT</span> <em>(pomaly)</em> …Ak to viaže on, uzly držia.</p><p class="cue"><span class="meno">ERIK</span> Ak im nechá priestor, držia aj v búrke.</p><p class="cue"><span class="meno">BENGT</span> Tak ostáva len voda.</p><p class="cue"><span class="meno">ERIK</span> Suchá balza pije pomaly.</p><p class="cue"><span class="meno">BENGT</span> <em>(takmer pre seba)</em> Štyri mesiace je dlho piť. <em>(Beat. Posledné zaváhanie — a jeho rozpustenie.)</em> Ale Herman by na hnijúce drevo nevkročil.</p><p class="cue"><span class="meno">ERIK</span> Nevkročil.</p><p class="cue"><span class="meno">BENGT</span> …Nevkročil.</p><p class="rez"><em>Pozrú na seba — prekvapení, že stoja na tej istej strane. Je to pre nich skoro nepríjemné.</em></p><p class="cue"><span class="meno">ERIK</span> Prúdy to umožňujú. Herman to udrží. Zvyšok je vôľa. <em>(Beat.)</em> Idem.</p><p class="cue"><span class="meno">BENGT</span> To bolo Erikovské áno.</p><p class="cue"><span class="meno">KAPITÁN</span> Viem. A tvoje?</p><p class="rez"><em>BENGT odloží knihu. Prvýkrát za celý čas.</em></p><p class="cue"><span class="meno">BENGT</span> Moje je tiež áno. Z iného dôvodu.</p><p class="cue"><span class="meno">KAPITÁN</span> Akého?</p><p class="cue"><span class="meno">BENGT</span> Pretože stále neviem, či to drevo dopláva. A to ma znepokojuje. A znepokojenie je jediný dôvod, pre ktorý stojí za to ráno vstať.</p><p class="cue"><span class="meno">ERIK</span> To je najmenej vedecký dôvod, aký som kedy počul.</p><p class="cue"><span class="meno">BENGT</span> <em>(zavrie knihu)</em> Viem.</p><p class="rez"><em>KAPITÁN zdvihne klietku. Mieri ku dverám.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Herman vravel, že prídete obaja. Že sa najprv pobijete o to, kto z vás má väčšiu pravdu — a potom prídete obaja.</p><p class="cue"><span class="meno">ERIK</span> To nie je pravda.</p><p class="cue"><span class="meno">BENGT</span> Úplná pravda.</p><p class="cue"><span class="meno">ERIK</span> <em>(beat)</em> …Úplná pravda.</p><p class="rez"><em>Pozrú na seba, mierne dotknutí tým, že sa zhodli.</em></p><p class="rez"><em>KAPITÁN sa pri dverách obzrie. ERIK bez pozretia posunie studenú kávu Bengtovi na dosah. BENGT bez pozretia chytí padajúcu knihu z Erikovho stohu a vráti ju navrch. Ani jeden to neprizná. Už sa hádajú o niečom inom.</em></p><p class="cue"><span class="meno">BENGT</span> Ťažisko je aj tak príliš vpredu.</p><p class="cue"><span class="meno">ERIK</span> To budeme riešiť na móle.</p><p class="cue"><span class="meno">BENGT</span> To riešime teraz.</p><p class="cue"><span class="meno">ERIK</span> Teraz nemáme plť.</p><p class="cue"><span class="meno">BENGT</span> Práve preto je ideálny čas.</p><p class="rez"><em>KAPITÁN takmer vyjde. Takmer sa usmeje.</em></p><div class="titulok">PRESVEDČIŤ DVOCH, ČO SA NEZHODNÚ ANI NA KÁVE. ZA JEDNO POPOLUDNIE.</div><p class="cue"><span class="meno">ERIK A BENGT</span> <em>(zvnútra, naraz, vľúdne)</em> Aj teba radi vidíme.</p><p class="rez"><em>Svetlo dole.</em></p></section><section class="obraz" id="III-4"><h2><span class="oid">III.4</span>Telefón</h2><p class="rez"><em>Dva póly svetla. Vľavo KAPITÁN pri telefóne na chodbe, klietka pri nohe, výraz muža, ktorý sa pripravil na krátky, vecný hovor. Vpravo kuchyňa v Larviku. Telefón zazvoní. Zdvihne ho HERMANOVÁ — zástera, v druhej ruke varecha.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Larvik.</p><p class="cue"><span class="meno">KAPITÁN</span> Herman?</p><p class="cue"><span class="meno">HERMANOVÁ</span> Herman je v prístave. Háda sa s drevom, ktoré mu je primokré, prisuché alebo prikrivé — to ešte nerozhodol. Si to ty.</p><p class="cue"><span class="meno">KAPITÁN</span> Ja.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Tak koľko ich máš?</p><p class="rez"><em>KAPITÁN sa na sekundu zarazí — prišiel ohlásiť, nie skladať účty.</em></p><p class="cue"><span class="meno">KAPITÁN</span> Erik a Bengt. Idú obaja.</p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(bez prekvapenia)</em> No iste. <em>(Beat.)</em> Jedol si?</p><p class="cue"><span class="meno">KAPITÁN</span> Čo?</p><p class="cue"><span class="meno">HERMANOVÁ</span> Od rána. Jedol si niečo?</p><p class="cue"><span class="meno">KAPITÁN</span> Kávu.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Ich kávu.</p><p class="cue"><span class="meno">KAPITÁN</span> Vypili ju jeden druhému.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Tak ich poznám. <em>(Odloží varechu — počuť to. Tón vecnejší: ráta.)</em> Dobre. Ty. Môj muž. Tí dvaja hádaví. A ten chlapec.</p><p class="cue"><span class="meno">KAPITÁN</span> Aký chlapec?</p><p class="rez"><em>Krátke ticho. Z hovoru sa stane niečo iné.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Torstein.</p><p class="cue"><span class="meno">KAPITÁN</span> Torstein mi doniesol prístroj. To bolo všetko, čo som od neho chcel.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Viem, čo si chcel. Hovorím ti, čo bude. Ten chlapec ide s vami.</p><p class="cue"><span class="meno">KAPITÁN</span> Nepočítam s ním. Je to študent. Nemá na palube čo robiť.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Stál pred mojimi dverami s mapami, ktorým nikto neveril — a niesol ich tak, akoby prešiel celý kraj len preto, aby ich niekto konečne videl. Takého človeka domov nepošleš, Kapitán. Takého nájdeš ráno na móle, či ho pozveš, alebo nie.</p><p class="rez"><em>KAPITÁN mlčí. Toto si nezarátal.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Ty si v ňom videl chlapca, čo ti doniesol škatuľu. Ja som videla, ako sa pozeral na Hermana. <em>(Tichšie.)</em> Presne tak si sa kedysi pozeral aj ty. A vieš, kam ťa to doviedlo.</p><p class="rez"><em>Beat. Niečo ťažké prejde linkou.</em></p><p class="cue"><span class="meno">KAPITÁN</span> <em>(potichu)</em> Tak nás je päť.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Päť. A šiesty ti chýba — ten, čo vie poslať do sveta správu, keď tých päť spraví hlúposť. A oni ju spravia.</p><p class="cue"><span class="meno">KAPITÁN</span> Herman vravel šesť.</p><p class="cue"><span class="meno">HERMANOVÁ</span> A väčšinou má pravdu. To je na ňom to najnepríjemnejšie.</p><p class="cue"><span class="meno">KAPITÁN</span> Telegrafista. Viem o jednom.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Tak za ním choď. <em>(Mäkšie.)</em> A choď ty, nie cez telefón. Toho nezískaš číslami. Toho získaš tak, že prídeš.</p><p class="rez"><em>KAPITÁN si to zaznamená — krátke mlčanie.</em></p><p class="cue"><span class="meno">PAPOUŠEK</span> <em>(z klietky pri jeho nohe, do slúchadla)</em> Blbec.</p><p class="cue"><span class="meno">HERMANOVÁ</span> <em>(počuje to)</em> Pozdravuje aj papagáj.</p><p class="cue"><span class="meno">KAPITÁN</span> Stále vie len jedno slovo.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Vie to najdôležitejšie.</p><p class="cue"><span class="meno">KAPITÁN</span> Povedz Hermanovi, že sme piati.</p><p class="cue"><span class="meno">HERMANOVÁ</span> Poviem mu, že ste piati a chýba šiesty. Nech má z čoho byť nevrlý do večere — inak mu chýba dôvod. <em>(Beat. Tón klesne, len trochu.)</em> A povedz mu to sám. Zajtra, keď pôjdeš okolo. Rád počuje tvoj hlas. Aj keď tvrdí, že nie.</p><p class="rez"><em>Ticho na linke. Na jednom konci varecha, na druhom klietka. Nikto nezavesí.</em></p><p class="cue"><span class="meno">HERMANOVÁ</span> Choď za tým telegrafistom. A Kapitán — usmial si sa cestou na Aniku?</p><p class="cue"><span class="meno">KAPITÁN</span> <em>(po pauze)</em> Nie je to o láske.</p><p class="cue"><span class="meno">HERMANOVÁ</span> To hovorí každý, kto sa práve usmial. <em>(Beat.)</em> Koláč ti nechám. Keď privezieš oboch.</p><p class="rez"><em>Zavesí. Pól svetla vpravo zhasne. KAPITÁN ostane sám so slúchadlom. Položí ho. Zdvihne klietku.</em></p><div class="titulok">PIATI. CHÝBA TELEGRAFISTA.</div><p class="rez"><em>Svetlo dole.</em></p><p class="koniec">— koniec III. dejstva —</p></section><div class="pager"><a href="../dejstvo/II.html">← II. dejstvo</a><a href="../dejstvo/IV.html">IV. dejstvo →</a></div></main></div><div id="lb"><img alt=""></div><script>
+(function(){
+  var R=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI'];
+  var jump=document.getElementById('jump');
+  function go(v){
+    v=v.trim().toUpperCase().replace(/[\s,]+/g,'.');
+    var m=v.match(/^([IVX]+|\d+)(?:[.\-·]?(\d+|M))?$/); if(!m) return false;
+    var r=m[1]; if(/^\d+$/.test(r)) r=R[parseInt(r,10)-1]; if(R.indexOf(r)<0) return false;
+    var b=document.body, root=b.getAttribute('data-root')||'/', ext=b.getAttribute('data-ext')||'';
+    location.href=root+'dejstvo/'+r+ext+(m[2]?'#'+r+'-'+m[2]:''); return true;
+  }
+  if(jump) jump.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){ if(!go(jump.value)) jump.style.outline='2px solid #e9a'; }
+    if(e.key==='Escape') jump.blur();
+  });
+  var lb=document.getElementById('lb'), lbi=lb&&lb.querySelector('img');
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t.classList&&t.classList.contains('zoom')){ e.preventDefault(); lbi.src=t.src; lb.classList.add('on'); }
+    else if(lb&&lb.classList.contains('on')) lb.classList.remove('on');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.target.matches('input,textarea')||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key==='Escape'&&lb) lb.classList.remove('on');
+    if(e.key==='g'||e.key==='/'){ if(jump){ e.preventDefault(); jump.focus(); jump.select(); } }
+  });
+})();
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('section.obraz'));
+  var cards={}, links={};
+  [].forEach.call(document.querySelectorAll('.karta'),function(c){cards[c.getAttribute('data-for')]=c;});
+  [].forEach.call(document.querySelectorAll('.onav a[data-id]'),function(a){links[a.getAttribute('data-id')]=a;});
+  var nav=document.querySelector('.act>nav'), fab=document.querySelector('.fab');
+  var body=document.body, cur=null, user=false;
+  var prev=body.getAttribute('data-prev'), next=body.getAttribute('data-next');
+  function activate(id){
+    if(!id||id===cur||!(cards[id]||links[id])) return; cur=id;
+    for(var k in cards) cards[k].hidden=(k!==id);
+    for(var k2 in links) links[k2].classList.toggle('on',k2===id);
+    if(fab&&cards[id]) fab.textContent='Scéna '+cards[id].querySelector('.oid').textContent;
+    var a=links[id];
+    if(a&&nav&&nav.offsetParent){ var top=a.offsetTop-nav.offsetTop;
+      if(top<nav.scrollTop+40||top>nav.scrollTop+nav.clientHeight-60) nav.scrollTop=top-nav.clientHeight/2; }
+    if(user) history.replaceState(null,'','#'+id);
+  }
+  function spy(){
+    var y=window.innerHeight*0.3, best=secs[0];
+    for(var i=0;i<secs.length;i++){ if(secs[i].getBoundingClientRect().top<=y) best=secs[i]; else break; }
+    if(best) activate(best.id);
+  }
+  var tick=false;
+  window.addEventListener('scroll',function(){ user=true; if(!tick){ tick=true; requestAnimationFrame(function(){ tick=false; spy(); }); } },{passive:true});
+  var h=location.hash.slice(1);
+  if(h&&cards[h]) activate(h); else spy();
+  function goSec(d){
+    var i=-1; for(var k=0;k<secs.length;k++) if(secs[k].id===cur) i=k;
+    var s=secs[Math.max(0,Math.min(secs.length-1,i+d))];
+    if(s){ s.scrollIntoView({behavior:'smooth'}); history.replaceState(null,'','#'+s.id); activate(s.id); }
+  }
+  if(fab) fab.addEventListener('click',function(e){ e.stopPropagation(); body.classList.toggle('panel'); });
+  document.addEventListener('keydown',function(e){
+    if(e.target.matches('input,textarea')||e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.key==='j'||e.key==='n') goSec(1);
+    else if(e.key==='k'||e.key==='p') goSec(-1);
+    else if(e.key==='ArrowRight'&&next) location.href=next;
+    else if(e.key==='ArrowLeft'&&prev) location.href=prev;
+    else if(e.key==='s') body.classList.toggle('panel');
+  });
+})();</script></body></html>
